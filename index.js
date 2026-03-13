@@ -172,6 +172,15 @@ const styles = {
     boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
     position: "relative",
   },
+  logoText: {
+    fontSize: "20px",
+    lineHeight: 1.1,
+    fontWeight: 800,
+    letterSpacing: "0.22em",
+    textAlign: "center",
+    textTransform: "uppercase",
+    color: "rgba(255,255,255,0.92)",
+  },
   centerLabel: {
     textAlign: "center",
     marginTop: "22px",
@@ -357,7 +366,7 @@ function WalkieMusicWebsite() {
             <div style={styles.heroCard}>
               <div style={styles.heroInner}>
                 <div style={styles.logoBox}>
-                  <WalkieLogo />
+                  <div style={styles.logoText}>WALKIE<br/>MUSIC</div>
                 </div>
 
                 <div style={styles.centerLabel}>Now Playing</div>
@@ -438,5 +447,6 @@ function WalkieMusicWebsite() {
   );
 }
 
+// MOUNT THE WEBSITE
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<WalkieMusicWebsite />);
