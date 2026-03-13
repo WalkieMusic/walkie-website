@@ -143,8 +143,7 @@ const styles = {
     border: "1px solid rgba(255,255,255,0.1)",
     borderRadius: "28px",
     padding: "28px",
-    background:
-      "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03))",
+    background: "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03))",
   },
   logoBox: {
     width: "190px",
@@ -298,7 +297,7 @@ const styles = {
   },
 };
 
-export default function WalkieMusicWebsite() {
+function WalkieMusicWebsite() {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 900;
 
   return (
@@ -307,46 +306,23 @@ export default function WalkieMusicWebsite() {
         <section
           style={{
             ...styles.hero,
-            gridTemplateColumns: isMobile
-              ? "1fr"
-              : styles.hero.gridTemplateColumns,
+            gridTemplateColumns: isMobile ? "1fr" : styles.hero.gridTemplateColumns,
           }}
         >
           <div>
             <div style={styles.badge}>Official Artist Website</div>
-            <h1
-              style={{
-                ...styles.title,
-                fontSize: isMobile ? "56px" : styles.title.fontSize,
-              }}
-            >
+            <h1 style={{ ...styles.title, fontSize: isMobile ? "56px" : styles.title.fontSize }}>
               Walkie
             </h1>
-            <p
-              style={{
-                ...styles.subtitle,
-                fontSize: isMobile ? "18px" : styles.subtitle.fontSize,
-              }}
-            >
-              SA roots in NZ soil. Original music, new releases, streaming links
-              and everything in one place.
+            <p style={{ ...styles.subtitle, fontSize: isMobile ? "18px" : styles.subtitle.fontSize }}>
+              SA roots in NZ soil. Original music, new releases, streaming links and everything in one place.
             </p>
 
             <div style={styles.buttonRow}>
-              <a
-                href={links[0].url}
-                target="_blank"
-                rel="noreferrer"
-                style={styles.primaryBtn}
-              >
+              <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.primaryBtn}>
                 🎧 Listen on Spotify
               </a>
-              <a
-                href={links[1].url}
-                target="_blank"
-                rel="noreferrer"
-                style={styles.secondaryBtn}
-              >
+              <a href={links[1].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
                 ▶️ Watch on YouTube
               </a>
             </div>
@@ -354,9 +330,7 @@ export default function WalkieMusicWebsite() {
             <div
               style={{
                 ...styles.stats,
-                gridTemplateColumns: isMobile
-                  ? "1fr"
-                  : styles.stats.gridTemplateColumns,
+                gridTemplateColumns: isMobile ? "1fr" : styles.stats.gridTemplateColumns,
               }}
             >
               {[
@@ -379,23 +353,8 @@ export default function WalkieMusicWebsite() {
                 <div style={styles.logoBox}>
                   <div style={styles.logoText}>
                     <div>Official</div>
-                    <div
-                      style={{
-                        marginTop: "10px",
-                        fontSize: "30px",
-                        letterSpacing: "0.16em",
-                      }}
-                    >
-                      Logo
-                    </div>
-                    <div
-                      style={{
-                        marginTop: "10px",
-                        fontSize: "11px",
-                        letterSpacing: "0.18em",
-                        color: "rgba(255,255,255,0.55)",
-                      }}
-                    >
+                    <div style={{ marginTop: "10px", fontSize: "30px", letterSpacing: "0.16em" }}>Logo</div>
+                    <div style={{ marginTop: "10px", fontSize: "11px", letterSpacing: "0.18em", color: "rgba(255,255,255,0.55)" }}>
                       Replace with final Walkie mark
                     </div>
                   </div>
@@ -403,22 +362,14 @@ export default function WalkieMusicWebsite() {
 
                 <div style={styles.centerLabel}>Now Playing</div>
                 <div style={styles.heroCardTitle}>Latest Release</div>
-                <div style={styles.heroCardText}>
-                  Drop your newest song title here
-                </div>
+                <div style={styles.heroCardText}>Drop your newest song title here</div>
 
                 <div style={styles.coverBox}>
                   <div style={styles.coverPlaceholder}>Add cover art here</div>
                   <div style={styles.songStrip}>
                     <div>
                       <div style={{ fontWeight: 700 }}>Featured Song</div>
-                      <div
-                        style={{
-                          color: "rgba(255,255,255,0.5)",
-                          fontSize: "13px",
-                          marginTop: "4px",
-                        }}
-                      >
+                      <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginTop: "4px" }}>
                         Update with your latest track
                       </div>
                     </div>
@@ -433,19 +384,11 @@ export default function WalkieMusicWebsite() {
         <section
           style={{
             ...styles.sectionGrid,
-            gridTemplateColumns: isMobile
-              ? "1fr"
-              : styles.sectionGrid.gridTemplateColumns,
+            gridTemplateColumns: isMobile ? "1fr" : styles.sectionGrid.gridTemplateColumns,
           }}
         >
           {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noreferrer"
-              style={styles.linkCard}
-            >
+            <a key={link.name} href={link.url} target="_blank" rel="noreferrer" style={styles.linkCard}>
               <div style={styles.linkLeft}>
                 <div style={styles.iconBox}>{link.icon}</div>
                 <div>
@@ -453,11 +396,7 @@ export default function WalkieMusicWebsite() {
                   <div style={styles.linkSubtitle}>{link.subtitle}</div>
                 </div>
               </div>
-              <div
-                style={{ fontSize: "22px", color: "rgba(255,255,255,0.55)" }}
-              >
-                ↗
-              </div>
+              <div style={{ fontSize: "22px", color: "rgba(255,255,255,0.55)" }}>↗</div>
             </a>
           ))}
         </section>
@@ -465,18 +404,14 @@ export default function WalkieMusicWebsite() {
         <section
           style={{
             ...styles.infoGrid,
-            gridTemplateColumns: isMobile
-              ? "1fr"
-              : styles.infoGrid.gridTemplateColumns,
+            gridTemplateColumns: isMobile ? "1fr" : styles.infoGrid.gridTemplateColumns,
           }}
         >
           <div style={styles.infoCard}>
             <div style={styles.smallLabel}>About</div>
             <div style={styles.infoTitle}>The Walkie sound</div>
             <div style={styles.infoText}>
-              Walkie creates original music with emotion, energy and a modern
-              sound. From full song releases to short-form previews, this is the
-              home for every platform and every new drop.
+              Walkie creates original music with emotion, energy and a modern sound. From full song releases to short-form previews, this is the home for every platform and every new drop.
             </div>
           </div>
 
@@ -484,16 +419,10 @@ export default function WalkieMusicWebsite() {
             <div style={styles.smallLabel}>Featured Release</div>
             <div style={styles.infoTitle}>Your newest track</div>
             <div style={styles.infoText}>
-              Add your latest song title, a short one-line description, and a
-              direct streaming link here to push your newest release first.
+              Add your latest song title, a short one-line description, and a direct streaming link here to push your newest release first.
             </div>
             <div style={{ marginTop: "20px" }}>
-              <a
-                href={links[0].url}
-                target="_blank"
-                rel="noreferrer"
-                style={styles.secondaryBtn}
-              >
+              <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
                 🎧 Stream now
               </a>
             </div>
@@ -508,3 +437,7 @@ export default function WalkieMusicWebsite() {
     </div>
   );
 }
+
+// MOUNT THE WEBSITE
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<WalkieMusicWebsite />);
