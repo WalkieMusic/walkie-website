@@ -44,14 +44,14 @@ const styles = {
   page: {
     minHeight: "100vh",
     background:
-      "radial-gradient(circle at top, rgba(255,255,255,0.12), transparent 25%), linear-gradient(180deg, #0b0b0d 0%, #111114 45%, #09090b 100%)",
+      "radial-gradient(circle at top, rgba(255,255,255,0.14), transparent 22%), linear-gradient(180deg, #050507 0%, #0d0d11 42%, #060608 100%)",
     color: "#ffffff",
     fontFamily: "Inter, Arial, sans-serif",
   },
   shell: {
     maxWidth: "1180px",
     margin: "0 auto",
-    padding: "40px 24px 60px",
+    padding: "40px 24px 70px",
   },
   hero: {
     display: "grid",
@@ -173,13 +173,13 @@ const styles = {
     position: "relative",
   },
   logoText: {
-    fontSize: "20px",
-    lineHeight: 1.1,
-    fontWeight: 800,
-    letterSpacing: "0.22em",
+    fontSize: "28px",
+    lineHeight: 1.05,
+    fontWeight: 900,
+    letterSpacing: "0.16em",
     textAlign: "center",
     textTransform: "uppercase",
-    color: "rgba(255,255,255,0.92)",
+    color: "rgba(255,255,255,0.95)",
   },
   centerLabel: {
     textAlign: "center",
@@ -202,22 +202,43 @@ const styles = {
     marginBottom: "20px",
   },
   coverBox: {
+    marginTop: "8px",
     border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(0,0,0,0.35)",
+    background: "rgba(0,0,0,0.28)",
     borderRadius: "22px",
-    padding: "16px",
+    padding: "18px",
   },
-  coverPlaceholder: {
-    aspectRatio: "1 / 1",
-    border: "1px dashed rgba(255,255,255,0.15)",
-    background: "rgba(255,255,255,0.03)",
-    borderRadius: "18px",
+  releaseMeta: {
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    gap: "10px",
     textAlign: "center",
-    color: "rgba(255,255,255,0.45)",
+    padding: "8px 4px 4px",
+  },
+  releasePill: {
+    display: "inline-block",
+    padding: "8px 14px",
+    borderRadius: "999px",
+    border: "1px solid rgba(255,255,255,0.12)",
+    background: "rgba(255,255,255,0.05)",
+    color: "rgba(255,255,255,0.72)",
+    fontSize: "12px",
+    letterSpacing: "0.18em",
+    textTransform: "uppercase",
+  },
+  releaseTitle: {
+    fontSize: "28px",
+    fontWeight: 800,
+    lineHeight: 1.15,
+    margin: 0,
+  },
+  releaseSub: {
     fontSize: "14px",
+    color: "rgba(255,255,255,0.62)",
+    lineHeight: 1.7,
+    maxWidth: "290px",
+    margin: 0,
   },
   songStrip: {
     marginTop: "14px",
@@ -302,6 +323,25 @@ const styles = {
     color: "rgba(255,255,255,0.72)",
     fontSize: "16px",
   },
+  embedGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: "18px",
+    marginTop: "18px",
+  },
+  embedCard: {
+    border: "1px solid rgba(255,255,255,0.1)",
+    background: "rgba(255,255,255,0.05)",
+    borderRadius: "30px",
+    padding: "22px",
+    boxShadow: "0 18px 40px rgba(0,0,0,0.2)",
+  },
+  iframeWrap: {
+    marginTop: "16px",
+    overflow: "hidden",
+    borderRadius: "18px",
+    border: "1px solid rgba(255,255,255,0.08)",
+  },
   footer: {
     marginTop: "42px",
     paddingTop: "22px",
@@ -374,7 +414,13 @@ function WalkieMusicWebsite() {
                 <div style={styles.heroCardText}>Latest Walkie release</div>
 
                 <div style={styles.coverBox}>
-                  <div style={styles.coverPlaceholder}>Add “As Die Tyd Stilbly” cover art here</div>
+                  <div style={styles.releaseMeta}>
+                    <div style={styles.releasePill}>Out Now</div>
+                    <p style={styles.releaseTitle}>As Die Tyd Stilbly</p>
+                    <p style={styles.releaseSub}>
+                      Stream the latest Walkie release and follow every new drop from one place.
+                    </p>
+                  </div>
                   <div style={styles.songStrip}>
                     <div>
                       <div style={{ fontWeight: 700 }}>As Die Tyd Stilbly</div>
@@ -434,6 +480,47 @@ function WalkieMusicWebsite() {
               <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
                 🎧 Stream now
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style={{
+            ...styles.embedGrid,
+            gridTemplateColumns: isMobile ? "1fr" : styles.embedGrid.gridTemplateColumns,
+          }}
+        >
+          <div style={styles.embedCard}>
+            <div style={styles.smallLabel}>Spotify Player</div>
+            <div style={{ ...styles.infoTitle, fontSize: "30px", marginBottom: "0" }}>Listen here</div>
+            <div style={styles.iframeWrap}>
+              <iframe
+                style={{ border: 0, display: "block" }}
+                src="https://open.spotify.com/embed/artist/3HkQPPZVeuoEfuzcwJNX4M?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Walkie Spotify Player"
+              ></iframe>
+            </div>
+          </div>
+
+          <div style={styles.embedCard}>
+            <div style={styles.smallLabel}>YouTube</div>
+            <div style={{ ...styles.infoTitle, fontSize: "30px", marginBottom: "0" }}>Watch on YouTube</div>
+            <div style={styles.iframeWrap}>
+              <iframe
+                width="100%"
+                height="352"
+                src="https://www.youtube.com/embed?listType=user_uploads&list=walkie-music"
+                title="Walkie YouTube"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </section>
