@@ -370,16 +370,16 @@ function WalkieMusicWebsite() {
                 </div>
 
                 <div style={styles.centerLabel}>Now Playing</div>
-                <div style={styles.heroCardTitle}>Latest Release</div>
-                <div style={styles.heroCardText}>Drop your newest song title here</div>
+                <div style={styles.heroCardTitle}>As Die Tyd Stilbly</div>
+                <div style={styles.heroCardText}>Latest Walkie release</div>
 
                 <div style={styles.coverBox}>
-                  <div style={styles.coverPlaceholder}>Add cover art here</div>
+                  <div style={styles.coverPlaceholder}>Add “As Die Tyd Stilbly” cover art here</div>
                   <div style={styles.songStrip}>
                     <div>
-                      <div style={{ fontWeight: 700 }}>Featured Song</div>
+                      <div style={{ fontWeight: 700 }}>As Die Tyd Stilbly</div>
                       <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginTop: "4px" }}>
-                        Update with your latest track
+                        Now streaming
                       </div>
                     </div>
                     <div style={{ fontSize: "20px" }}>→</div>
@@ -426,9 +426,9 @@ function WalkieMusicWebsite() {
 
           <div style={styles.infoCard}>
             <div style={styles.smallLabel}>Featured Release</div>
-            <div style={styles.infoTitle}>Your newest track</div>
+            <div style={styles.infoTitle}>As Die Tyd Stilbly</div>
             <div style={styles.infoText}>
-              Add your latest song title, a short one-line description, and a direct streaming link here to push your newest release first.
+              Walkie’s latest release is out now. Stream “As Die Tyd Stilbly” and follow the journey across every platform.
             </div>
             <div style={{ marginTop: "20px" }}>
               <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
