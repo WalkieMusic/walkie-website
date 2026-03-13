@@ -514,7 +514,7 @@ function WalkieMusicWebsite() {
               <iframe
                 width="100%"
                 height="352"
-                src="https://www.youtube.com/embed?listType=user_uploads&list=walkie-music"
+                src="https://www.youtube.com/embed/videoseries?list=UUrKt3xZWrvMnxyPcjAY8iZw"
                 title="Walkie YouTube"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
