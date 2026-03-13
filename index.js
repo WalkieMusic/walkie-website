@@ -25,6 +25,21 @@ const links = [
   },
 ];
 
+function WalkieLogo() {
+  return (
+    <svg viewBox="0 0 220 220" width="190" height="190" aria-label="Walkie logo">
+      <rect x="10" y="10" width="180" height="180" fill="none" stroke="rgba(255,255,255,0.72)" strokeWidth="2" />
+      <path d="M34 38 V108 L62 80 V108 L98 72 V38 H74 V60 L50 84 V38 Z" fill="#ffffff" />
+      <path d="M108 38 L154 38 L98 108 H126 L136 90 H156 V108 H180 V38 H154 L108 84 H124 L154 52 V66 H140 Z" fill="#ffffff" />
+      <path d="M34 122 H58 V182 H34 Z" fill="#ffffff" />
+      <path d="M66 122 H92 V146 L112 122 H142 L108 152 L144 182 H112 L92 162 V182 H66 Z" fill="#ffffff" />
+      <circle cx="152" cy="132" r="7" fill="#ffffff" />
+      <rect x="145" y="144" width="14" height="38" fill="#ffffff" />
+      <path d="M176 146 C195 146 208 159 208 177 C208 179 208 181 207 182 H166 C169 190 176 194 186 194 C193 194 199 193 204 190 V206 C198 209 192 210 184 210 C158 210 142 197 142 176 C142 158 156 146 176 146 Z M167 170 H188 C187 163 183 160 176 160 C171 160 168 164 167 170 Z" fill="#ffffff" transform="translate(-8 -12) scale(0.92)" />
+    </svg>
+  );
+}
+
 const styles = {
   page: {
     minHeight: "100vh",
@@ -156,15 +171,6 @@ const styles = {
     justifyContent: "center",
     boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
     position: "relative",
-  },
-  logoText: {
-    fontSize: "20px",
-    lineHeight: 1.1,
-    fontWeight: 800,
-    letterSpacing: "0.22em",
-    textAlign: "center",
-    textTransform: "uppercase",
-    color: "rgba(255,255,255,0.92)",
   },
   centerLabel: {
     textAlign: "center",
@@ -351,13 +357,7 @@ function WalkieMusicWebsite() {
             <div style={styles.heroCard}>
               <div style={styles.heroInner}>
                 <div style={styles.logoBox}>
-                  <div style={styles.logoText}>
-                    <div>Official</div>
-                    <div style={{ marginTop: "10px", fontSize: "30px", letterSpacing: "0.16em" }}>Logo</div>
-                    <div style={{ marginTop: "10px", fontSize: "11px", letterSpacing: "0.18em", color: "rgba(255,255,255,0.55)" }}>
-                      Replace with final Walkie mark
-                    </div>
-                  </div>
+                  <WalkieLogo />
                 </div>
 
                 <div style={styles.centerLabel}>Now Playing</div>
@@ -438,6 +438,5 @@ function WalkieMusicWebsite() {
   );
 }
 
-// MOUNT THE WEBSITE
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<WalkieMusicWebsite />);
