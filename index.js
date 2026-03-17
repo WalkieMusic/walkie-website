@@ -404,89 +404,70 @@ function WalkieMusicWebsite() {
   return (
     <div style={styles.page}>
       <main style={styles.shell}>
-        <section
-          style={{
-            ...styles.hero,
-            gridTemplateColumns: isMobile ? "1fr" : styles.hero.gridTemplateColumns,
-          }}
-        >
-          <div>
-            <div style={styles.badge}>Official Artist Website</div>
+       <section
+  style={{
+    ...styles.hero,
+    gridTemplateColumns: isMobile ? "1fr" : "1fr",
+    textAlign: "center",
+  }}
+>
+  <div>
+    <div style={styles.badge}>Official Artist Website</div>
 
-            <h1 style={{ ...styles.title, fontSize: isMobile ? "58px" : styles.title.fontSize }}>
-              WALKIE
-            </h1>
+    <h1
+      style={{
+        ...styles.title,
+        fontSize: isMobile ? "58px" : "110px",
+        letterSpacing: "0.08em",
+      }}
+    >
+      WALKIE
+    </h1>
 
-            <p style={{ ...styles.subtitle, fontSize: isMobile ? "18px" : styles.subtitle.fontSize }}>
-              South African roots. New Zealand soil. Original music with heart, energy and a sound built to move people.
-            </p>
+    <p
+      style={{
+        ...styles.subtitle,
+        fontSize: isMobile ? "18px" : "24px",
+        maxWidth: "800px",
+        margin: "0 auto 30px",
+      }}
+    >
+      Music built to move people.
+      Real energy. Real sound. No limits.
+    </p>
 
-            <div style={styles.buttonRow}>
-              <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.primaryBtn}>
-                <PlatformIcon type="spotify" />
-                <span>Listen on Spotify</span>
-              </a>
-              <a href={links[1].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
-                <PlatformIcon type="youtube" />
-                <span>Watch on YouTube</span>
-              </a>
-            </div>
+    <div style={{ ...styles.buttonRow, justifyContent: "center" }}>
+      <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.primaryBtn}>
+        <PlatformIcon type="spotify" />
+        <span>Listen on Spotify</span>
+      </a>
+      <a href={links[1].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
+        <PlatformIcon type="youtube" />
+        <span>Watch on YouTube</span>
+      </a>
+    </div>
 
-            <div
-              style={{
-                ...styles.stats,
-                gridTemplateColumns: isMobile ? "1fr" : styles.stats.gridTemplateColumns,
-              }}
-            >
-              {[
-                ["4", "Streaming platforms"],
-                ["New", "Music drops"],
-                ["100%", "Walkie sound"],
-              ].map(([value, label]) => (
-                <div key={label} style={styles.statCard}>
-                  <div style={styles.statValue}>{value}</div>
-                  <div style={styles.statLabel}>{label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div style={styles.heroCardWrap}>
-            <div style={styles.glow} />
-            <div style={styles.heroCard}>
-              <div style={styles.heroInner}>
-                <div style={styles.logoBox}>
-                  <div style={styles.logoText}>WALKIE<br />MUSIC</div>
-                </div>
-
-                <div style={styles.centerLabel}>Featured release</div>
-                <div style={styles.heroCardTitle}>As Die Tyd Stilbly</div>
-                <div style={styles.heroCardText}>Now streaming on all main platforms</div>
-
-                <div style={styles.coverBox}>
-                  <div style={styles.releaseMeta}>
-                    <div style={styles.releasePill}>Out Now</div>
-                    <p style={styles.releaseTitle}>As Die Tyd Stilbly</p>
-                    <p style={styles.releaseSub}>
-                      A powerful Walkie release available now. Stream it, share it and stay locked in for every next drop.
-                    </p>
-                  </div>
-                  <div style={styles.songStrip}>
-                    <div>
-                      <div style={{ fontWeight: 800 }}>As Die Tyd Stilbly</div>
-                      <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginTop: "4px" }}>
-                        Streaming now
-                      </div>
-                    </div>
-                    <div style={{ fontSize: "20px" }}>→</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
+    <div
+      style={{
+        ...styles.stats,
+        maxWidth: "600px",
+        margin: "30px auto 0",
+        gridTemplateColumns: isMobile ? "1fr" : styles.stats.gridTemplateColumns,
+      }}
+    >
+      {[
+        ["4", "Streaming platforms"],
+        ["New", "Music drops"],
+        ["100%", "Walkie sound"],
+      ].map(([value, label]) => (
+        <div key={label} style={styles.statCard}>
+          <div style={styles.statValue}>{value}</div>
+          <div style={styles.statLabel}>{label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
           style={{
             ...styles.sectionGrid,
             gridTemplateColumns: isMobile ? "1fr" : styles.sectionGrid.gridTemplateColumns,
