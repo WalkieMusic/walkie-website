@@ -515,15 +515,17 @@ function WalkieMusicWebsite() {
           }}
         >
           <div style={styles.infoCard}>
-            <div style={styles.smallLabel}>About</div>
-            <div style={styles.infoTitle}>The Walkie sound</div>
-            <div style={styles.infoText}>
-              Walkie is an independent artist creating music with emotion, rhythm and real energy. From Afrikaans releases
-              to modern crossover sounds, every track is built to connect, hit hard and stay with you.
-              <br /><br />
-              This is the home for every new release, every official link and every step of the journey.
-            </div>
-          </div>
+  <div style={styles.smallLabel}>About</div>
+  <div style={styles.infoTitle}>The Walkie sound</div>
+  <div style={styles.infoText}>
+    Walkie is an independent artist creating music with emotion, energy and a modern sound. 
+    Every track is built to connect, hit hard and stay with you.
+    
+    No filler. No shortcuts. Just real music.
+    
+    This is the home for every release, every platform and everything Walkie.
+  </div>
+</div>
 
           <div style={styles.infoCard}>
             <div style={styles.smallLabel}>Featured Release</div>
