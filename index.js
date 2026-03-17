@@ -3,41 +3,85 @@ const links = [
     name: "Spotify",
     url: "https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M?si=Bey_hdaoQ_GG_afS21tCjw",
     subtitle: "Stream Walkie on Spotify",
-    icon: "🎧",
+    icon: "spotify",
   },
   {
     name: "YouTube",
     url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw",
     subtitle: "Watch full songs and new uploads",
-    icon: "▶️",
+    icon: "youtube",
   },
   {
     name: "Apple Music",
     url: "https://music.apple.com/us/artist/walkie-music/1875428459",
     subtitle: "Listen on Apple Music",
-    icon: "🍎",
+    icon: "apple",
   },
   {
     name: "TikTok",
     url: "https://www.tiktok.com/@walkiemusic",
     subtitle: "Follow for clips, teasers and updates",
-    icon: "🎵",
+    icon: "tiktok",
   },
 ];
 
-function WalkieLogo() {
-  return (
-    <svg viewBox="0 0 220 220" width="190" height="190" aria-label="Walkie logo">
-      <rect x="10" y="10" width="180" height="180" fill="none" stroke="rgba(255,255,255,0.72)" strokeWidth="2" />
-      <path d="M34 38 V108 L62 80 V108 L98 72 V38 H74 V60 L50 84 V38 Z" fill="#ffffff" />
-      <path d="M108 38 L154 38 L98 108 H126 L136 90 H156 V108 H180 V38 H154 L108 84 H124 L154 52 V66 H140 Z" fill="#ffffff" />
-      <path d="M34 122 H58 V182 H34 Z" fill="#ffffff" />
-      <path d="M66 122 H92 V146 L112 122 H142 L108 152 L144 182 H112 L92 162 V182 H66 Z" fill="#ffffff" />
-      <circle cx="152" cy="132" r="7" fill="#ffffff" />
-      <rect x="145" y="144" width="14" height="38" fill="#ffffff" />
-      <path d="M176 146 C195 146 208 159 208 177 C208 179 208 181 207 182 H166 C169 190 176 194 186 194 C193 194 199 193 204 190 V206 C198 209 192 210 184 210 C158 210 142 197 142 176 C142 158 156 146 176 146 Z M167 170 H188 C187 163 183 160 176 160 C171 160 168 164 167 170 Z" fill="#ffffff" transform="translate(-8 -12) scale(0.92)" />
-    </svg>
-  );
+function PlatformIcon({ type }) {
+  const common = {
+    width: 28,
+    height: 28,
+    viewBox: "0 0 32 32",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+  };
+
+  if (type === "spotify") {
+    return (
+      <svg {...common} aria-label="Spotify icon">
+        <circle cx="16" cy="16" r="13" stroke="rgba(255,255,255,0.92)" strokeWidth="1.8" />
+        <path d="M9.5 12.8C14.2 11.3 18.8 11.6 23 13.7" stroke="rgba(255,255,255,0.92)" strokeWidth="2" strokeLinecap="round" />
+        <path d="M10.7 16.6C14.6 15.4 18.1 15.6 21.5 17.3" stroke="rgba(255,255,255,0.78)" strokeWidth="1.9" strokeLinecap="round" />
+        <path d="M12 20.1C14.7 19.3 17.3 19.5 19.8 20.7" stroke="rgba(255,255,255,0.64)" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "youtube") {
+    return (
+      <svg {...common} aria-label="YouTube icon">
+        <rect x="5" y="8" width="22" height="16" rx="5" stroke="rgba(255,255,255,0.92)" strokeWidth="1.8" />
+        <path d="M14 12.8L20.5 16L14 19.2V12.8Z" fill="rgba(255,255,255,0.92)" />
+      </svg>
+    );
+  }
+
+  if (type === "apple") {
+    return (
+      <svg {...common} aria-label="Apple Music icon">
+        <path
+          d="M20.8 8.4C19.8 9.6 18.3 10.3 16.9 10.2C16.7 8.7 17.4 7.2 18.3 6.2C19.4 5 20.9 4.4 22.2 4.5C22.3 5.9 21.8 7.2 20.8 8.4Z"
+          fill="rgba(255,255,255,0.92)"
+        />
+        <path
+          d="M22.4 11.3C20.9 10.4 18.7 10.2 17.4 11.1C16.6 11.6 15.5 11.6 14.7 11.1C13.1 10.2 10.7 10.3 9.1 11.5C6.8 13.2 6.2 17.3 7.8 20.1C8.9 22 10.3 24.1 12.1 24C13.2 24 13.8 23.3 15.2 23.3C16.6 23.3 17.1 24 18.3 24C20.1 24 21.4 22.1 22.4 20.2C23.1 18.8 23.4 17.4 23.5 17.3C23.4 17.3 20.3 16.1 20.3 12.7C20.3 11.8 20.6 11.1 22.4 11.3Z"
+          fill="rgba(255,255,255,0.92)"
+        />
+        <path d="M14 11V21.5C14 23 15 24 16.4 24C17.8 24 18.8 23 18.8 21.5V9.6L23 8.9" stroke="#09090b" strokeWidth="1.2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "tiktok") {
+    return (
+      <svg {...common} aria-label="TikTok icon">
+        <path
+          d="M18.2 7.2C18.8 9.1 20.4 10.5 22.4 10.9V13.6C20.9 13.5 19.5 12.9 18.2 12V18.7C18.2 22 15.7 24.5 12.6 24.5C9.5 24.5 7 22 7 18.9C7 15.9 9.4 13.4 12.5 13.4C12.9 13.4 13.2 13.4 13.6 13.5V16.3C13.3 16.2 13 16.1 12.6 16.1C11 16.1 9.7 17.4 9.7 19C9.7 20.6 11 21.9 12.6 21.9C14.2 21.9 15.5 20.6 15.5 19V6.2H18.2V7.2Z"
+          fill="rgba(255,255,255,0.92)"
+        />
+      </svg>
+    );
+  }
+
+  return null;
 }
 
 const styles = {
@@ -282,8 +326,8 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "24px",
     border: "1px solid rgba(255,255,255,0.1)",
+    flexShrink: 0,
   },
   linkTitle: {
     fontSize: "22px",
@@ -375,10 +419,12 @@ function WalkieMusicWebsite() {
 
             <div style={styles.buttonRow}>
               <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.primaryBtn}>
-                🎧 Listen on Spotify
+                <PlatformIcon type="spotify" />
+                <span>Listen on Spotify</span>
               </a>
               <a href={links[1].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
-                ▶️ Watch on YouTube
+                <PlatformIcon type="youtube" />
+                <span>Watch on YouTube</span>
               </a>
             </div>
 
@@ -406,7 +452,7 @@ function WalkieMusicWebsite() {
             <div style={styles.heroCard}>
               <div style={styles.heroInner}>
                 <div style={styles.logoBox}>
-                  <div style={styles.logoText}>WALKIE<br/>MUSIC</div>
+                  <div style={styles.logoText}>WALKIE<br />MUSIC</div>
                 </div>
 
                 <div style={styles.centerLabel}>Now Playing</div>
@@ -445,7 +491,9 @@ function WalkieMusicWebsite() {
           {links.map((link) => (
             <a key={link.name} href={link.url} target="_blank" rel="noreferrer" style={styles.linkCard}>
               <div style={styles.linkLeft}>
-                <div style={styles.iconBox}>{link.icon}</div>
+                <div style={styles.iconBox}>
+                  <PlatformIcon type={link.icon} />
+                </div>
                 <div>
                   <div style={styles.linkTitle}>{link.name}</div>
                   <div style={styles.linkSubtitle}>{link.subtitle}</div>
@@ -478,7 +526,8 @@ function WalkieMusicWebsite() {
             </div>
             <div style={{ marginTop: "20px" }}>
               <a href={links[0].url} target="_blank" rel="noreferrer" style={styles.secondaryBtn}>
-                🎧 Stream now
+                <PlatformIcon type="spotify" />
+                <span>Stream now</span>
               </a>
             </div>
           </div>
@@ -534,6 +583,5 @@ function WalkieMusicWebsite() {
   );
 }
 
-// MOUNT THE WEBSITE
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<WalkieMusicWebsite />);
