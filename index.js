@@ -1,6 +1,6 @@
 // ===============================
-// WALKIE – GOD-TIER PREMIUM ARTIST SITE v3 (FIXED)
-// Auckland 2026
+// WALKIE – PREMIUM ARTIST SITE (FIXED)
+// South African roots • NZ based
 // ===============================
 
 const { useState, useEffect } = React;
@@ -9,22 +9,44 @@ const links = [
   {
     name: "Spotify",
     url: "https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M",
-    svg: '<svg viewBox="0 0 512 123" xmlns="http://www.w3.org/2000/svg" fill="#1DB954"><path d="M.057 75.44c5.077-.36 9.78-2.46 13.54-6.18 3.76-3.72 6.04-8.5 6.4-13.82.36-5.32-1.3-10.56-4.7-14.7-3.4-4.14-8.07-6.7-13.14-7.06-5.07-.36-10.02 1.3-13.8 4.7-3.78 3.4-6.12 8.07-6.48 13.14-.36 5.07 1.3 10.02 4.7 13.8 3.4 3.78 8.07 6.12 13.14 6.48zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm94.3 368.9c-3.2 4.2-9.4 5.3-13.6 2.1-33.3-20.5-75.1-25.1-124.6-13.7-5.1 1.2-10.2-2-11.4-7.1-1.2-5.1 2-10.2 7.1-11.4 54.8-12.7 101.6-7.5 139.8 16.3 4.2 3.2 5.3 9.4 2.1 13.8zm25-57.7c-4 5.3-11.8 6.7-17.1 2.7-39.5-30.4-99.6-39.2-146.4-21.4-4.9 1.8-10.3-1-12.1-5.9-1.8-4.9 1-10.3 5.9-12.1 52.6-19.3 118.3-9.4 163.3 25.3 5.3 4 6.7 11.8 2.7 17.1zm.2-57.8c-47.3-28-125.5-30.5-170.9-16.9-5.7 1.7-11.8-1.6-13.5-7.3-1.7-5.7 1.6-11.8 7.3-13.5 51.6-15.3 136.3-12.3 189.5 19.7 5.3 3.2 7 10.4 3.8 15.7-3.2 5.3-10.4 7-15.7 3.8z"/></svg>',
+    svg: `
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
+        <path d="M17.4 16.9a.75.75 0 0 1-1.03.24c-2.82-1.72-6.37-2.1-10.56-1.14a.75.75 0 0 1-.34-1.46c4.58-1.05 8.51-.61 11.68 1.32a.75.75 0 0 1 .25 1.04Zm1.47-3.27a.94.94 0 0 1-1.29.3c-3.23-1.99-8.15-2.56-11.98-1.38a.94.94 0 1 1-.56-1.8c4.37-1.36 9.8-.72 13.53 1.57.45.28.6.86.3 1.31Zm.13-3.4C15.15 7.9 8.8 7.7 5.1 8.82a1.13 1.13 0 1 1-.65-2.16c4.25-1.28 11.32-1.03 15.7 1.57a1.13 1.13 0 1 1-1.15 1.98Z" fill="#fff"/>
+      </svg>
+    `,
   },
   {
     name: "YouTube",
     url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw",
-    svg: '<svg viewBox="0 0 2560 720" xmlns="http://www.w3.org/2000/svg"><defs><style>.a{fill:#f00;}</style></defs><path class="a" d="M2500 210c0-35-28-63-63-63H123c-35 0-63 28-63 63v300c0 35 28 63 63 63h2314c35 0 63-28 63-63z"/><path fill="#fff" d="M1050 450l300-150-300-150zM1050 450v-300l300 150z"/></svg>',
+    svg: `
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0000"/>
+        <path d="M10 9.2L15.6 12 10 14.8V9.2Z" fill="#fff"/>
+      </svg>
+    `,
   },
   {
     name: "Apple Music",
     url: "https://music.apple.com/us/artist/walkie-music/1875428459",
-    svg: '<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm48 368h-96c-22 0-40-18-40-40v-96c0-22 18-40 40-40h96c22 0 40 18 40 40v96c0 22-18 40-40 40zM256 128c-70.7 0-128 57.3-128 128s57.3 128 128 128 128-57.3 128-128-57.3-128-128-128z"/></svg>',
+    svg: `
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="#FA233B"/>
+        <path d="M14.8 6.5v8.1a2.45 2.45 0 1 1-1.2-2.1V8.5l4.3-1v6.2a2.45 2.45 0 1 1-1.2-2.1V6.2l-1.9.3Z" fill="#fff"/>
+      </svg>
+    `,
   },
   {
     name: "TikTok",
     url: "https://www.tiktok.com/@walkiemusic",
-    svg: '<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="#000"><path d="M48 0C21.5 0 0 21.5 0 48s21.5 48 48 48 48-21.5 48-48S74.5 0 48 0zm20.7 72.3c-3.8 3.8-10.2 3.8-14 0l-6.7-6.7c-3.8-3.8-10.2-3.8-14 0l-6.7 6.7c-3.8 3.8-10.2 3.8-14 0-3.8-3.8-3.8-10.2 0-14l6.7-6.7c3.8-3.8 3.8-10.2 0-14l-6.7-6.7c-3.8-3.8-3.8-10.2 0-14 3.8-3.8 10.2-3.8 14 0l6.7 6.7c3.8 3.8 10.2 3.8 14 0l6.7-6.7c3.8-3.8 10.2-3.8 14 0 3.8 3.8 3.8 10.2 0 14l-6.7 6.7c-3.8 3.8-3.8 10.2 0 14l6.7 6.7c3.8 3.8 3.8 10.2 0 14z"/></svg>',
+    svg: `
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="#111"/>
+        <path d="M14.4 6.1c.55 1.28 1.5 2.06 2.9 2.23v2.05a5.34 5.34 0 0 1-2.85-.84v4.54a4.24 4.24 0 1 1-4.24-4.24c.24 0 .47.02.7.06v2.13a2.14 2.14 0 1 0 1.45 2.05V4.5h2.05v1.6Z" fill="#fff"/>
+        <path d="M13.8 6.1c.4 1.1 1.2 1.82 2.5 2.08v1.1a4.5 4.5 0 0 1-2.5-.78V6.1Z" fill="#25F4EE" opacity="0.9"/>
+        <path d="M12.25 11.95a2.14 2.14 0 1 0 1.45 2.05V8.7l2-.3v-.2a4.42 4.42 0 0 1-1.9-1.22v7.02a2.14 2.14 0 1 1-2.25-2.05Z" fill="#FE2C55" opacity="0.9"/>
+      </svg>
+    `,
   },
 ];
 
@@ -33,10 +55,6 @@ const releases = [
   { title: "No More Runnin", desc: "High-octane energy. Pure adrenaline.", color: "#FF0000" },
   { title: "Brothers Forever", desc: "Loyalty in every bar. Emotional heavyweight.", color: "#007AFF" },
 ];
-
-// ────────────────────────────────────────────────
-// HELPERS
-// ────────────────────────────────────────────────
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint);
@@ -51,18 +69,13 @@ function useIsMobile(breakpoint = 768) {
 }
 
 function injectGlobalCss(cssText) {
-  const existing = document.getElementById("walkie-global-keyframes");
+  const existing = document.getElementById("walkie-global-css");
   if (existing) return;
-
   const styleTag = document.createElement("style");
-  styleTag.id = "walkie-global-keyframes";
+  styleTag.id = "walkie-global-css";
   styleTag.innerHTML = cssText;
   document.head.appendChild(styleTag);
 }
-
-// ────────────────────────────────────────────────
-// COMPONENTS
-// ────────────────────────────────────────────────
 
 function MobileNavToggle({ isOpen, toggle }) {
   return (
@@ -121,7 +134,7 @@ function Hero() {
       <h1 style={styles.heroTitle}>WALKIE</h1>
 
       <p style={styles.heroSubtitle}>
-        Raw streets. Real emotion. Sound engineered to move souls in Auckland nights.
+        South African roots. New Zealand based. Raw emotion, real energy, and sound that stays with you.
       </p>
 
       <div style={styles.heroButtons}>
@@ -161,7 +174,7 @@ function PlatformCard({ item }) {
 function Platforms() {
   return (
     <section id="platforms" style={styles.section}>
-      <h2 style={styles.sectionTitle}>Everywhere You Look</h2>
+      <h2 style={styles.sectionTitle}>Find WALKIE Everywhere</h2>
 
       <div style={styles.platformGrid}>
         {links.map((item) => (
@@ -217,11 +230,10 @@ function About() {
       <h2 style={styles.sectionTitle}>Walkie DNA</h2>
 
       <p style={styles.aboutText}>
-        Born in Auckland streets. Independent to the core. Every track is therapy, hustle,
-        loyalty wrapped in cinematic beats and raw delivery.
+        South African born and now based in New Zealand, Walkie brings raw delivery,
+        cinematic energy, loyalty, hustle and real emotion into every track.
         <br /><br />
         No trends. No shortcuts. Just music that lingers long after the drop.
-        Walkie – real sound for real nights.
       </p>
     </section>
   );
@@ -230,7 +242,7 @@ function About() {
 function Footer() {
   return (
     <footer style={styles.footer}>
-      © {new Date().getFullYear()} WALKIE • Auckland, NZ • Independent Artist • Built Different
+      © {new Date().getFullYear()} WALKIE • South African Born • New Zealand Based • Independent Artist
       <div style={styles.footerSub}>
         Real music. Real energy. No limits.
       </div>
@@ -238,13 +250,9 @@ function Footer() {
   );
 }
 
-// ────────────────────────────────────────────────
-// MAIN APP
-// ────────────────────────────────────────────────
-
 function App() {
   useEffect(() => {
-    injectGlobalCss(globalKeyframes);
+    injectGlobalCss(globalCss);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -275,10 +283,6 @@ function App() {
     </div>
   );
 }
-
-// ────────────────────────────────────────────────
-// STYLES
-// ────────────────────────────────────────────────
 
 const styles = {
   page: {
@@ -506,16 +510,16 @@ const styles = {
   },
 
   platformLogoWrap: {
-    width: "60px",
-    height: "60px",
-    borderRadius: "16px",
+    width: "68px",
+    height: "68px",
+    borderRadius: "18px",
     background: "rgba(255,255,255,0.08)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexShrink: 0,
     overflow: "hidden",
-    padding: "10px",
+    padding: "12px",
     boxSizing: "border-box",
   },
 
@@ -616,11 +620,7 @@ const styles = {
   },
 };
 
-// ────────────────────────────────────────────────
-// GLOBAL KEYFRAMES + REVEAL CSS
-// ────────────────────────────────────────────────
-
-const globalKeyframes = `
+const globalCss = `
 @keyframes pulseGlow1 {
   0% { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(1.18); opacity: 0.95; }
@@ -661,16 +661,24 @@ section a:hover {
   transform: translateY(-3px);
 }
 
+.platformLogoInner svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.platformLogoInner svg[viewBox="0 0 512 123"],
+.platformLogoInner svg[viewBox="0 0 2560 720"] {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 1rem 5% !important;
   }
 }
 `;
-
-// ────────────────────────────────────────────────
-// RENDER
-// ────────────────────────────────────────────────
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
