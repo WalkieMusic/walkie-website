@@ -25,10 +25,10 @@ const links = [
   },
 ];
 
-function PlatformIcon({ type }) {
+function PlatformIcon({ type, size = 28 }) {
   const common = {
-    width: 28,
-    height: 28,
+    width: size,
+    height: size,
     viewBox: "0 0 32 32",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
@@ -65,7 +65,6 @@ function PlatformIcon({ type }) {
           d="M22.4 11.3C20.9 10.4 18.7 10.2 17.4 11.1C16.6 11.6 15.5 11.6 14.7 11.1C13.1 10.2 10.7 10.3 9.1 11.5C6.8 13.2 6.2 17.3 7.8 20.1C8.9 22 10.3 24.1 12.1 24C13.2 24 13.8 23.3 15.2 23.3C16.6 23.3 17.1 24 18.3 24C20.1 24 21.4 22.1 22.4 20.2C23.1 18.8 23.4 17.4 23.5 17.3C23.4 17.3 20.3 16.1 20.3 12.7C20.3 11.8 20.6 11.1 22.4 11.3Z"
           fill="rgba(255,255,255,0.92)"
         />
-        <path d="M14 11V21.5C14 23 15 24 16.4 24C17.8 24 18.8 23 18.8 21.5V9.6L23 8.9" stroke="#09090b" strokeWidth="1.2" strokeLinecap="round" />
       </svg>
     );
   }
@@ -88,45 +87,45 @@ const styles = {
   page: {
     minHeight: "100vh",
     background:
-      "radial-gradient(circle at top, rgba(255,255,255,0.14), transparent 22%), linear-gradient(180deg, #050507 0%, #0d0d11 42%, #060608 100%)",
+      "radial-gradient(circle at top, rgba(255,255,255,0.12), transparent 24%), linear-gradient(180deg, #040406 0%, #09090d 48%, #050507 100%)",
     color: "#ffffff",
     fontFamily: "Inter, Arial, sans-serif",
   },
   shell: {
     maxWidth: "1180px",
     margin: "0 auto",
-    padding: "40px 24px 70px",
+    padding: "42px 24px 72px",
   },
   hero: {
     display: "grid",
     gridTemplateColumns: "1.15fr 0.85fr",
-    gap: "32px",
+    gap: "34px",
     alignItems: "center",
   },
   badge: {
     display: "inline-block",
     padding: "10px 16px",
-    border: "1px solid rgba(255,255,255,0.14)",
+    border: "1px solid rgba(255,255,255,0.12)",
     borderRadius: "999px",
-    background: "rgba(255,255,255,0.06)",
+    background: "rgba(255,255,255,0.05)",
     fontSize: "12px",
-    letterSpacing: "0.2em",
+    letterSpacing: "0.22em",
     textTransform: "uppercase",
-    color: "rgba(255,255,255,0.75)",
+    color: "rgba(255,255,255,0.74)",
   },
   title: {
-    fontSize: "82px",
-    lineHeight: 1,
+    fontSize: "88px",
+    lineHeight: 0.95,
     margin: "22px 0 18px",
-    fontWeight: 800,
-    letterSpacing: "0.02em",
+    fontWeight: 900,
+    letterSpacing: "0.03em",
   },
   subtitle: {
-    fontSize: "21px",
+    fontSize: "22px",
     lineHeight: 1.7,
-    maxWidth: "720px",
-    color: "rgba(255,255,255,0.78)",
-    marginBottom: "28px",
+    maxWidth: "760px",
+    color: "rgba(255,255,255,0.8)",
+    marginBottom: "30px",
   },
   buttonRow: {
     display: "flex",
@@ -138,25 +137,25 @@ const styles = {
     display: "inline-flex",
     alignItems: "center",
     gap: "10px",
-    padding: "15px 22px",
+    padding: "16px 22px",
     borderRadius: "18px",
     background: "#ffffff",
     color: "#0d0d10",
     textDecoration: "none",
-    fontWeight: 700,
+    fontWeight: 800,
     border: "1px solid rgba(255,255,255,0.2)",
   },
   secondaryBtn: {
     display: "inline-flex",
     alignItems: "center",
     gap: "10px",
-    padding: "15px 22px",
+    padding: "16px 22px",
     borderRadius: "18px",
     background: "rgba(255,255,255,0.06)",
     color: "#ffffff",
     textDecoration: "none",
-    fontWeight: 700,
-    border: "1px solid rgba(255,255,255,0.15)",
+    fontWeight: 800,
+    border: "1px solid rgba(255,255,255,0.14)",
   },
   stats: {
     display: "grid",
@@ -164,19 +163,19 @@ const styles = {
     gap: "14px",
   },
   statCard: {
-    border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(255,255,255,0.05)",
-    borderRadius: "26px",
+    border: "1px solid rgba(255,255,255,0.09)",
+    background: "rgba(255,255,255,0.04)",
+    borderRadius: "24px",
     padding: "18px",
-    boxShadow: "0 20px 50px rgba(0,0,0,0.2)",
+    boxShadow: "0 20px 50px rgba(0,0,0,0.22)",
   },
   statValue: {
     fontSize: "28px",
-    fontWeight: 800,
+    fontWeight: 900,
     marginBottom: "4px",
   },
   statLabel: {
-    color: "rgba(255,255,255,0.6)",
+    color: "rgba(255,255,255,0.62)",
     fontSize: "14px",
   },
   heroCardWrap: {
@@ -184,71 +183,73 @@ const styles = {
   },
   glow: {
     position: "absolute",
-    inset: "-18px",
-    background: "rgba(255,255,255,0.08)",
-    filter: "blur(34px)",
-    borderRadius: "34px",
+    inset: "-20px",
+    background: "rgba(255,255,255,0.07)",
+    filter: "blur(36px)",
+    borderRadius: "38px",
   },
   heroCard: {
     position: "relative",
-    border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.09)",
+    background: "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04))",
     borderRadius: "34px",
     padding: "22px",
-    boxShadow: "0 30px 80px rgba(0,0,0,0.35)",
-    backdropFilter: "blur(18px)",
+    boxShadow: "0 30px 80px rgba(0,0,0,0.34)",
+    backdropFilter: "blur(16px)",
   },
   heroInner: {
-    border: "1px solid rgba(255,255,255,0.1)",
+    border: "1px solid rgba(255,255,255,0.08)",
     borderRadius: "28px",
     padding: "28px",
-    background: "linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03))",
+    background: "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))",
   },
   logoBox: {
     width: "190px",
     height: "190px",
     margin: "0 auto",
-    border: "1.5px solid rgba(255,255,255,0.45)",
-    background: "#09090b",
+    border: "1.5px solid rgba(255,255,255,0.22)",
+    background: "#060608",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
+    boxShadow: "0 0 30px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.45)",
     position: "relative",
+    overflow: "hidden",
   },
   logoText: {
-    fontSize: "28px",
-    lineHeight: 1.05,
+    fontSize: "26px",
+    lineHeight: 1.02,
     fontWeight: 900,
-    letterSpacing: "0.16em",
+    letterSpacing: "0.18em",
     textAlign: "center",
     textTransform: "uppercase",
-    color: "rgba(255,255,255,0.95)",
+    color: "rgba(255,255,255,0.96)",
   },
   centerLabel: {
     textAlign: "center",
     marginTop: "22px",
-    color: "rgba(255,255,255,0.55)",
+    color: "rgba(255,255,255,0.52)",
     fontSize: "12px",
-    letterSpacing: "0.32em",
+    letterSpacing: "0.3em",
     textTransform: "uppercase",
   },
   heroCardTitle: {
     textAlign: "center",
     margin: "14px 0 8px",
-    fontSize: "36px",
-    fontWeight: 800,
+    fontSize: "38px",
+    fontWeight: 900,
+    lineHeight: 1.05,
   },
   heroCardText: {
     textAlign: "center",
     fontSize: "14px",
-    color: "rgba(255,255,255,0.65)",
+    color: "rgba(255,255,255,0.68)",
     marginBottom: "20px",
   },
   coverBox: {
-    marginTop: "8px",
-    border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(0,0,0,0.28)",
+    marginTop: "10px",
+    border: "1px solid rgba(255,255,255,0.08)",
+    background: "rgba(0,0,0,0.24)",
     borderRadius: "22px",
     padding: "18px",
   },
@@ -272,21 +273,21 @@ const styles = {
     textTransform: "uppercase",
   },
   releaseTitle: {
-    fontSize: "28px",
-    fontWeight: 800,
-    lineHeight: 1.15,
+    fontSize: "30px",
+    fontWeight: 900,
+    lineHeight: 1.1,
     margin: 0,
   },
   releaseSub: {
     fontSize: "14px",
     color: "rgba(255,255,255,0.62)",
     lineHeight: 1.7,
-    maxWidth: "290px",
+    maxWidth: "300px",
     margin: 0,
   },
   songStrip: {
     marginTop: "14px",
-    border: "1px solid rgba(255,255,255,0.1)",
+    border: "1px solid rgba(255,255,255,0.08)",
     background: "rgba(255,255,255,0.04)",
     borderRadius: "18px",
     padding: "14px 16px",
@@ -305,8 +306,8 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     gap: "18px",
-    border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.09)",
+    background: "rgba(255,255,255,0.04)",
     borderRadius: "28px",
     padding: "20px",
     textDecoration: "none",
@@ -322,7 +323,7 @@ const styles = {
     width: "58px",
     height: "58px",
     borderRadius: "18px",
-    background: "rgba(255,255,255,0.08)",
+    background: "rgba(255,255,255,0.06)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -331,7 +332,7 @@ const styles = {
   },
   linkTitle: {
     fontSize: "22px",
-    fontWeight: 700,
+    fontWeight: 800,
     marginBottom: "4px",
   },
   linkSubtitle: {
@@ -345,10 +346,10 @@ const styles = {
     marginTop: "18px",
   },
   infoCard: {
-    border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.09)",
+    background: "rgba(255,255,255,0.04)",
     borderRadius: "30px",
-    padding: "24px",
+    padding: "26px",
     boxShadow: "0 18px 40px rgba(0,0,0,0.2)",
   },
   smallLabel: {
@@ -360,11 +361,12 @@ const styles = {
   infoTitle: {
     margin: "12px 0 10px",
     fontSize: "34px",
-    fontWeight: 800,
+    fontWeight: 900,
+    lineHeight: 1.1,
   },
   infoText: {
-    lineHeight: 1.8,
-    color: "rgba(255,255,255,0.72)",
+    lineHeight: 1.85,
+    color: "rgba(255,255,255,0.74)",
     fontSize: "16px",
   },
   embedGrid: {
@@ -374,8 +376,8 @@ const styles = {
     marginTop: "18px",
   },
   embedCard: {
-    border: "1px solid rgba(255,255,255,0.1)",
-    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.09)",
+    background: "rgba(255,255,255,0.04)",
     borderRadius: "30px",
     padding: "22px",
     boxShadow: "0 18px 40px rgba(0,0,0,0.2)",
@@ -389,7 +391,7 @@ const styles = {
   footer: {
     marginTop: "42px",
     paddingTop: "22px",
-    borderTop: "1px solid rgba(255,255,255,0.1)",
+    borderTop: "1px solid rgba(255,255,255,0.08)",
     textAlign: "center",
     color: "rgba(255,255,255,0.5)",
     fontSize: "14px",
@@ -410,11 +412,13 @@ function WalkieMusicWebsite() {
         >
           <div>
             <div style={styles.badge}>Official Artist Website</div>
-            <h1 style={{ ...styles.title, fontSize: isMobile ? "56px" : styles.title.fontSize }}>
-              Walkie
+
+            <h1 style={{ ...styles.title, fontSize: isMobile ? "58px" : styles.title.fontSize }}>
+              WALKIE
             </h1>
+
             <p style={{ ...styles.subtitle, fontSize: isMobile ? "18px" : styles.subtitle.fontSize }}>
-              SA roots in NZ soil. Original music, new releases, streaming links and everything in one place.
+              South African roots. New Zealand soil. Original music with heart, energy and a sound built to move people.
             </p>
 
             <div style={styles.buttonRow}>
@@ -435,9 +439,9 @@ function WalkieMusicWebsite() {
               }}
             >
               {[
-                ["4", "Official platforms"],
-                ["24/7", "Music access"],
-                ["100%", "Original sound"],
+                ["4", "Streaming platforms"],
+                ["New", "Music drops"],
+                ["100%", "Walkie sound"],
               ].map(([value, label]) => (
                 <div key={label} style={styles.statCard}>
                   <div style={styles.statValue}>{value}</div>
@@ -455,23 +459,23 @@ function WalkieMusicWebsite() {
                   <div style={styles.logoText}>WALKIE<br />MUSIC</div>
                 </div>
 
-                <div style={styles.centerLabel}>Now Playing</div>
+                <div style={styles.centerLabel}>Featured release</div>
                 <div style={styles.heroCardTitle}>As Die Tyd Stilbly</div>
-                <div style={styles.heroCardText}>Latest Walkie release</div>
+                <div style={styles.heroCardText}>Now streaming on all main platforms</div>
 
                 <div style={styles.coverBox}>
                   <div style={styles.releaseMeta}>
                     <div style={styles.releasePill}>Out Now</div>
                     <p style={styles.releaseTitle}>As Die Tyd Stilbly</p>
                     <p style={styles.releaseSub}>
-                      Stream the latest Walkie release and follow every new drop from one place.
+                      A powerful Walkie release available now. Stream it, share it and stay locked in for every next drop.
                     </p>
                   </div>
                   <div style={styles.songStrip}>
                     <div>
-                      <div style={{ fontWeight: 700 }}>As Die Tyd Stilbly</div>
+                      <div style={{ fontWeight: 800 }}>As Die Tyd Stilbly</div>
                       <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginTop: "4px" }}>
-                        Now streaming
+                        Streaming now
                       </div>
                     </div>
                     <div style={{ fontSize: "20px" }}>→</div>
@@ -514,7 +518,10 @@ function WalkieMusicWebsite() {
             <div style={styles.smallLabel}>About</div>
             <div style={styles.infoTitle}>The Walkie sound</div>
             <div style={styles.infoText}>
-              Walkie creates original music with emotion, energy and a modern sound. From full song releases to short-form previews, this is the home for every platform and every new drop.
+              Walkie is an independent artist creating music with emotion, rhythm and real energy. From Afrikaans releases
+              to modern crossover sounds, every track is built to connect, hit hard and stay with you.
+              <br /><br />
+              This is the home for every new release, every official link and every step of the journey.
             </div>
           </div>
 
