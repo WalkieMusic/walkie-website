@@ -1,337 +1,213 @@
 // ===============================
-// DATA
+// LINKS
 // ===============================
 const links = [
-  { name: "Spotify", url: "https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M", subtitle: "Stream Walkie on Spotify", icon: "🎧" },
-  { name: "YouTube", url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw", subtitle: "Watch videos and releases", icon: "▶️" },
-  { name: "Apple Music", url: "https://music.apple.com/us/artist/walkie-music/1875428459", subtitle: "Listen on Apple Music", icon: "🍎" },
-  { name: "TikTok", url: "https://www.tiktok.com/@walkiemusic", subtitle: "Follow for updates", icon: "🎵" },
+  {
+    name: "Spotify",
+    url: "https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M",
+    subtitle: "Stream Walkie on Spotify",
+    icon: "spotify",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw",
+    subtitle: "Watch videos and releases",
+    icon: "youtube",
+  },
+  {
+    name: "Apple Music",
+    url: "https://music.apple.com/us/artist/walkie-music/1875428459",
+    subtitle: "Listen on Apple Music",
+    icon: "apple",
+  },
+  {
+    name: "TikTok",
+    url: "https://www.tiktok.com/@walkiemusic",
+    subtitle: "Follow for updates",
+    icon: "tiktok",
+  },
 ];
 
 // ===============================
-// SMALL COMPONENTS
+// REAL ICONS
 // ===============================
-function Icon({ icon }) {
-  return <div style={styles.icon}>{icon}</div>;
-}
+function PlatformIcon({ type }) {
+  const style = { width: 26, height: 26, fill: "#fff" };
 
-function Button({ children, href, type }) {
-  return (
-    <a href={href} target="_blank" style={type === "main" ? styles.btnMain : styles.btnAlt}>
-      {children}
-    </a>
-  );
-}
+  if (type === "spotify") {
+    return (
+      <svg viewBox="0 0 24 24" style={style}>
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.4 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.8-9.5-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.7 1.2.3.2.4.6.2.9zm1.3-3c-.3.4-.8.5-1.2.2-2.9-1.8-7.3-2.3-10.7-1.2-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.9-1.2 8.8-.6 12.2 1.5.4.3.5.8.3 1.3zm.1-3.2c-3.5-2.1-9.3-2.3-12.6-1.3-.6.2-1.2-.2-1.4-.8-.2-.6.2-1.2.8-1.4 3.8-1.2 10.2-1 14.2 1.5.5.3.7 1 .4 1.5-.3.5-1 .7-1.4.5z" />
+      </svg>
+    );
+  }
 
-function SectionTitle({ children }) {
-  return <h2 style={styles.sectionTitle}>{children}</h2>;
-}
+  if (type === "youtube") {
+    return (
+      <svg viewBox="0 0 24 24" style={style}>
+        <path d="M23.5 6.2s-.2-1.7-.8-2.5c-.8-.9-1.6-.9-2-.9C17.8 2.5 12 2.5 12 2.5h0s-5.8 0-8.7.3c-.4 0-1.2 0-2 .9-.6.8-.8 2.5-.8 2.5S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.7.8 2.5c.8.9 1.9.9 2.4 1 1.7.2 7.3.3 8.3.3s6.6 0 8.3-.3c.5-.1 1.6-.1 2.4-1 .6-.8.8-2.5.8-2.5s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.5 14.6V8.8l6.3 2.9-6.3 2.9z" />
+      </svg>
+    );
+  }
 
-// ===============================
-// NAVBAR
-// ===============================
-function Navbar() {
-  return (
-    <div style={styles.navbar}>
-      <div style={styles.navLogo}>WALKIE</div>
-      <div style={styles.navLinks}>
-        <a href="#">Home</a>
-        <a href="#">Music</a>
-        <a href="#">About</a>
-      </div>
-    </div>
-  );
-}
+  if (type === "apple") {
+    return (
+      <svg viewBox="0 0 24 24" style={style}>
+        <path d="M16.4 13.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.9-1.8-3.5-1.8-1.5-.2-2.9.9-3.6.9-.7 0-1.8-.9-3-.9-1.5 0-2.9.9-3.7 2.2-1.6 2.7-.4 6.7 1.1 8.8.7 1 1.6 2.1 2.8 2 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1 2.7-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.1-3.4zM14.6 6.6c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z" />
+      </svg>
+    );
+  }
 
-// ===============================
-// HERO
-// ===============================
-function Hero() {
-  return (
-    <section style={styles.hero}>
-      <div style={styles.heroGlow}></div>
+  if (type === "tiktok") {
+    return (
+      <svg viewBox="0 0 24 24" style={style}>
+        <path d="M21 8.1c-1.2 0-2.3-.4-3.2-1.2V16c0 2.8-2.3 5-5 5s-5-2.2-5-5 2.3-5 5-5c.3 0 .6 0 .9.1v2.6c-.3-.1-.6-.2-.9-.2-1.3 0-2.4 1.1-2.4 2.5S11.5 18 12.8 18s2.4-1.1 2.4-2.5V3h2.6c.2 1.5 1.4 2.7 3 2.9v2.2z"/>
+      </svg>
+    );
+  }
 
-      <h1 style={styles.heroTitle}>WALKIE</h1>
-
-      <p style={styles.heroSub}>
-        Music built to move people. Real energy. Real sound. No limits.
-      </p>
-
-      <div style={styles.heroButtons}>
-        <Button href={links[0].url} type="main">Spotify</Button>
-        <Button href={links[1].url} type="alt">YouTube</Button>
-      </div>
-    </section>
-  );
+  return null;
 }
 
 // ===============================
-// PLATFORM CARD
-// ===============================
-function PlatformCard({ link }) {
-  return (
-    <a href={link.url} target="_blank" style={styles.card}>
-      <div style={styles.cardLeft}>
-        <Icon icon={link.icon} />
-        <div>
-          <div style={styles.cardTitle}>{link.name}</div>
-          <div style={styles.cardSub}>{link.subtitle}</div>
-        </div>
-      </div>
-      →
-    </a>
-  );
-}
-
-// ===============================
-// PLATFORMS SECTION
-// ===============================
-function Platforms() {
-  return (
-    <section style={styles.section}>
-      <SectionTitle>Platforms</SectionTitle>
-
-      <div style={styles.grid}>
-        {links.map((l) => (
-          <PlatformCard key={l.name} link={l} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-// ===============================
-// FEATURED RELEASE
-// ===============================
-function Featured() {
-  return (
-    <section style={styles.section}>
-      <SectionTitle>Featured Release</SectionTitle>
-
-      <div style={styles.featureBox}>
-        <h3 style={styles.featureTitle}>As Die Tyd Stilbly</h3>
-        <p style={styles.featureText}>
-          A powerful Walkie release. Stream it now across all platforms.
-        </p>
-
-        <Button href={links[0].url} type="alt">Stream Now</Button>
-      </div>
-    </section>
-  );
-}
-
-// ===============================
-// ABOUT
-// ===============================
-function About() {
-  return (
-    <section style={styles.section}>
-      <SectionTitle>The Walkie sound</SectionTitle>
-
-      <div style={styles.aboutBox}>
-        Walkie is an independent artist creating music with emotion, energy and a modern sound.
-        Every track is built to connect, hit hard and stay with you.
-        <br /><br />
-        No filler. No shortcuts. Just real music.
-      </div>
-    </section>
-  );
-}
-
-// ===============================
-// EMBEDS
-// ===============================
-function SpotifyEmbed() {
-  return (
-    <section style={styles.section}>
-      <SectionTitle>Listen</SectionTitle>
-
-      <iframe
-        src="https://open.spotify.com/embed/artist/3HkQPPZVeuoEfuzcwJNX4M"
-        width="100%"
-        height="352"
-        style={styles.embed}
-      ></iframe>
-    </section>
-  );
-}
-
-function YouTubeEmbed() {
-  return (
-    <section style={styles.section}>
-      <SectionTitle>Watch</SectionTitle>
-
-      <iframe
-        width="100%"
-        height="352"
-        src="https://www.youtube.com/embed/videoseries?list=UUrKt3xZWrvMnxyPcjAY8iZw"
-        style={styles.embed}
-      ></iframe>
-    </section>
-  );
-}
-
-// ===============================
-// FOOTER
-// ===============================
-function Footer() {
-  return (
-    <div style={styles.footer}>
-      WALKIE • Official Artist Website
-    </div>
-  );
-}
-
-// ===============================
-// MAIN APP
+// MAIN COMPONENT
 // ===============================
 function App() {
   return (
     <div style={styles.page}>
-      <Navbar />
+      
+      {/* HERO */}
+      <section style={styles.hero}>
+        <div style={styles.glow}></div>
 
-      <div style={styles.container}>
-        <Hero />
-        <Platforms />
-        <Featured />
-        <About />
-        <SpotifyEmbed />
-        <YouTubeEmbed />
-        <Footer />
+        <h1 style={styles.title}>WALKIE</h1>
+
+        <p style={styles.subtitle}>
+          Music built to move people. Real energy. Real sound. No limits.
+        </p>
+
+        <div style={styles.buttons}>
+          <a href={links[0].url} target="_blank" style={styles.btnMain}>Spotify</a>
+          <a href={links[1].url} target="_blank" style={styles.btnAlt}>YouTube</a>
+        </div>
+      </section>
+
+      {/* LINKS */}
+      <section style={styles.section}>
+        <h2 style={styles.heading}>Platforms</h2>
+
+        {links.map((l) => (
+          <a key={l.name} href={l.url} target="_blank" style={styles.card}>
+            <div style={styles.left}>
+              <PlatformIcon type={l.icon} />
+              <div>
+                <div style={styles.cardTitle}>{l.name}</div>
+                <div style={styles.cardSub}>{l.subtitle}</div>
+              </div>
+            </div>
+            →
+          </a>
+        ))}
+      </section>
+
+      {/* FOOTER */}
+      <div style={styles.footer}>
+        WALKIE • Official Artist Website
       </div>
     </div>
   );
 }
 
 // ===============================
-// STYLES (BIG SECTION)
+// STYLES
 // ===============================
 const styles = {
   page: {
     minHeight: "100vh",
-    background:
-      "radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 30%), linear-gradient(180deg,#040406,#09090d)",
+    background: "#050507",
     color: "#fff",
     fontFamily: "Inter, Arial",
-  },
-
-  container: {
-    maxWidth: "1100px",
-    margin: "0 auto",
-    padding: "80px 20px",
-  },
-
-  navbar: {
-    position: "fixed",
-    top: 0,
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "20px",
-    background: "rgba(0,0,0,0.6)",
-    backdropFilter: "blur(10px)",
-    zIndex: 10,
-  },
-
-  navLogo: {
-    fontWeight: 900,
-    letterSpacing: "4px",
-  },
-
-  navLinks: {
-    display: "flex",
-    gap: "20px",
+    padding: "40px 20px",
   },
 
   hero: {
     textAlign: "center",
-    marginTop: "60px",
     position: "relative",
+    marginBottom: "60px",
   },
 
-  heroGlow: {
-    width: "300px",
-    height: "300px",
-    background: "rgba(255,255,255,0.1)",
-    borderRadius: "50%",
-    filter: "blur(100px)",
+  glow: {
     position: "absolute",
+    width: "400px",
+    height: "400px",
+    background: "rgba(255,255,255,0.1)",
+    filter: "blur(100px)",
     left: "50%",
     transform: "translateX(-50%)",
   },
 
-  heroTitle: {
+  title: {
     fontSize: "120px",
     fontWeight: 900,
-    letterSpacing: "8px",
+    letterSpacing: "6px",
   },
 
-  heroSub: {
+  subtitle: {
     color: "#aaa",
     marginTop: "10px",
   },
 
-  heroButtons: {
-    marginTop: "30px",
+  buttons: {
+    marginTop: "20px",
     display: "flex",
     justifyContent: "center",
     gap: "12px",
   },
 
   btnMain: {
-    padding: "16px 24px",
+    padding: "14px 20px",
     background: "#fff",
     color: "#000",
-    borderRadius: "14px",
+    borderRadius: "12px",
     textDecoration: "none",
-    fontWeight: 800,
   },
 
   btnAlt: {
-    padding: "16px 24px",
-    background: "#111",
+    padding: "14px 20px",
     border: "1px solid #333",
-    color: "#fff",
-    borderRadius: "14px",
+    borderRadius: "12px",
     textDecoration: "none",
+    color: "#fff",
   },
 
   section: {
-    marginTop: "60px",
+    maxWidth: "800px",
+    margin: "0 auto",
   },
 
-  sectionTitle: {
-    fontSize: "30px",
-    fontWeight: 900,
+  heading: {
     marginBottom: "20px",
   },
 
-  grid: {
-    display: "grid",
-    gap: "16px",
-  },
-
   card: {
-    padding: "20px",
-    borderRadius: "16px",
-    background: "rgba(255,255,255,0.05)",
     display: "flex",
     justifyContent: "space-between",
+    padding: "18px",
+    background: "#111",
+    borderRadius: "14px",
+    marginBottom: "12px",
     textDecoration: "none",
     color: "#fff",
+    transition: "0.2s",
   },
 
-  cardLeft: {
+  left: {
     display: "flex",
     gap: "12px",
   },
 
-  icon: {
-    fontSize: "22px",
-  },
-
   cardTitle: {
-    fontWeight: 800,
+    fontWeight: 700,
   },
 
   cardSub: {
@@ -339,36 +215,9 @@ const styles = {
     color: "#aaa",
   },
 
-  featureBox: {
-    padding: "24px",
-    background: "rgba(255,255,255,0.05)",
-    borderRadius: "16px",
-  },
-
-  featureTitle: {
-    fontSize: "24px",
-    fontWeight: 800,
-  },
-
-  featureText: {
-    color: "#aaa",
-    marginBottom: "12px",
-  },
-
-  aboutBox: {
-    padding: "20px",
-    background: "rgba(255,255,255,0.05)",
-    borderRadius: "16px",
-  },
-
-  embed: {
-    borderRadius: "12px",
-    border: 0,
-  },
-
   footer: {
-    marginTop: "60px",
     textAlign: "center",
+    marginTop: "60px",
     color: "#666",
   },
 };
