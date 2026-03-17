@@ -1,229 +1,313 @@
 // ===============================
-// LINKS
+// WALKIE FULL PREMIUM WEBSITE
 // ===============================
+
+// -------------------------------
+// DATA
+// -------------------------------
 const links = [
-  {
-    name: "Spotify",
-    url: "https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M",
-    subtitle: "Stream Walkie on Spotify",
-    icon: "spotify",
-  },
-  {
-    name: "YouTube",
-    url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw",
-    subtitle: "Watch videos and releases",
-    icon: "youtube",
-  },
-  {
-    name: "Apple Music",
-    url: "https://music.apple.com/us/artist/walkie-music/1875428459",
-    subtitle: "Listen on Apple Music",
-    icon: "apple",
-  },
-  {
-    name: "TikTok",
-    url: "https://www.tiktok.com/@walkiemusic",
-    subtitle: "Follow for updates",
-    icon: "tiktok",
-  },
+  { name: "Spotify", url: "https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M" },
+  { name: "YouTube", url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw" },
+  { name: "Apple Music", url: "https://music.apple.com/us/artist/walkie-music/1875428459" },
+  { name: "TikTok", url: "https://www.tiktok.com/@walkiemusic" },
 ];
 
-// ===============================
-// REAL ICONS
-// ===============================
-function PlatformIcon({ type }) {
-  const style = { width: 26, height: 26, fill: "#fff" };
+const releases = [
+  { title: "As Die Tyd Stilbly", desc: "Latest release – streaming everywhere now." },
+  { title: "No More Runnin", desc: "High energy track built to hit hard." },
+  { title: "Brothers Forever", desc: "Emotional release dedicated to loyalty." },
+];
 
-  if (type === "spotify") {
-    return (
-      <svg viewBox="0 0 24 24" style={style}>
-        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.4 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.8-9.5-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.7 1.2.3.2.4.6.2.9zm1.3-3c-.3.4-.8.5-1.2.2-2.9-1.8-7.3-2.3-10.7-1.2-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.9-1.2 8.8-.6 12.2 1.5.4.3.5.8.3 1.3zm.1-3.2c-3.5-2.1-9.3-2.3-12.6-1.3-.6.2-1.2-.2-1.4-.8-.2-.6.2-1.2.8-1.4 3.8-1.2 10.2-1 14.2 1.5.5.3.7 1 .4 1.5-.3.5-1 .7-1.4.5z" />
-      </svg>
-    );
-  }
+// -------------------------------
+// COMPONENTS
+// -------------------------------
 
-  if (type === "youtube") {
-    return (
-      <svg viewBox="0 0 24 24" style={style}>
-        <path d="M23.5 6.2s-.2-1.7-.8-2.5c-.8-.9-1.6-.9-2-.9C17.8 2.5 12 2.5 12 2.5h0s-5.8 0-8.7.3c-.4 0-1.2 0-2 .9-.6.8-.8 2.5-.8 2.5S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.7.8 2.5c.8.9 1.9.9 2.4 1 1.7.2 7.3.3 8.3.3s6.6 0 8.3-.3c.5-.1 1.6-.1 2.4-1 .6-.8.8-2.5.8-2.5s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.5 14.6V8.8l6.3 2.9-6.3 2.9z" />
-      </svg>
-    );
-  }
-
-  if (type === "apple") {
-    return (
-      <svg viewBox="0 0 24 24" style={style}>
-        <path d="M16.4 13.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.9-1.8-3.5-1.8-1.5-.2-2.9.9-3.6.9-.7 0-1.8-.9-3-.9-1.5 0-2.9.9-3.7 2.2-1.6 2.7-.4 6.7 1.1 8.8.7 1 1.6 2.1 2.8 2 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1 2.7-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.1-3.4zM14.6 6.6c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z" />
-      </svg>
-    );
-  }
-
-  if (type === "tiktok") {
-    return (
-      <svg viewBox="0 0 24 24" style={style}>
-        <path d="M21 8.1c-1.2 0-2.3-.4-3.2-1.2V16c0 2.8-2.3 5-5 5s-5-2.2-5-5 2.3-5 5-5c.3 0 .6 0 .9.1v2.6c-.3-.1-.6-.2-.9-.2-1.3 0-2.4 1.1-2.4 2.5S11.5 18 12.8 18s2.4-1.1 2.4-2.5V3h2.6c.2 1.5 1.4 2.7 3 2.9v2.2z"/>
-      </svg>
-    );
-  }
-
-  return null;
-}
-
-// ===============================
-// MAIN COMPONENT
-// ===============================
-function App() {
+function Navbar() {
   return (
-    <div style={styles.page}>
-      
-      {/* HERO */}
-      <section style={styles.hero}>
-        <div style={styles.glow}></div>
-
-        <h1 style={styles.title}>WALKIE</h1>
-
-        <p style={styles.subtitle}>
-          Music built to move people. Real energy. Real sound. No limits.
-        </p>
-
-        <div style={styles.buttons}>
-          <a href={links[0].url} target="_blank" style={styles.btnMain}>Spotify</a>
-          <a href={links[1].url} target="_blank" style={styles.btnAlt}>YouTube</a>
-        </div>
-      </section>
-
-      {/* LINKS */}
-      <section style={styles.section}>
-        <h2 style={styles.heading}>Platforms</h2>
-
-        {links.map((l) => (
-          <a key={l.name} href={l.url} target="_blank" style={styles.card}>
-            <div style={styles.left}>
-              <PlatformIcon type={l.icon} />
-              <div>
-                <div style={styles.cardTitle}>{l.name}</div>
-                <div style={styles.cardSub}>{l.subtitle}</div>
-              </div>
-            </div>
-            →
-          </a>
-        ))}
-      </section>
-
-      {/* FOOTER */}
-      <div style={styles.footer}>
-        WALKIE • Official Artist Website
+    <div style={styles.navbar}>
+      <div style={styles.logo}>WALKIE</div>
+      <div style={styles.navLinks}>
+        <a href="#home">Home</a>
+        <a href="#music">Music</a>
+        <a href="#about">About</a>
       </div>
     </div>
   );
 }
 
-// ===============================
-// STYLES
-// ===============================
+function Hero() {
+  return (
+    <section id="home" style={styles.hero}>
+      <div style={styles.heroGlow}></div>
+
+      <h1 style={styles.heroTitle}>WALKIE</h1>
+
+      <p style={styles.heroSubtitle}>
+        Music built to move people. Real energy. Real sound. No limits.
+      </p>
+
+      <div style={styles.heroButtons}>
+        <a href={links[0].url} target="_blank" style={styles.mainBtn}>Spotify</a>
+        <a href={links[1].url} target="_blank" style={styles.altBtn}>YouTube</a>
+      </div>
+    </section>
+  );
+}
+
+function PlatformCard({ item }) {
+  return (
+    <a href={item.url} target="_blank" style={styles.platformCard}>
+      <div style={styles.platformLeft}>
+        <div style={styles.platformName}>{item.name}</div>
+        <div style={styles.platformSub}>Open {item.name}</div>
+      </div>
+      <div style={styles.arrow}>→</div>
+    </a>
+  );
+}
+
+function Platforms() {
+  return (
+    <section style={styles.section}>
+      <h2 style={styles.sectionTitle}>Platforms</h2>
+      <div style={styles.platformGrid}>
+        {links.map((l) => (
+          <PlatformCard key={l.name} item={l} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ReleaseCard({ r }) {
+  return (
+    <div style={styles.releaseCard}>
+      <h3 style={styles.releaseTitle}>{r.title}</h3>
+      <p style={styles.releaseDesc}>{r.desc}</p>
+      <a href={links[0].url} target="_blank" style={styles.altBtn}>
+        Listen
+      </a>
+    </div>
+  );
+}
+
+function Releases() {
+  return (
+    <section id="music" style={styles.section}>
+      <h2 style={styles.sectionTitle}>Music</h2>
+      <div style={styles.releaseGrid}>
+        {releases.map((r) => (
+          <ReleaseCard key={r.title} r={r} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section id="about" style={styles.section}>
+      <h2 style={styles.sectionTitle}>The Walkie sound</h2>
+      <p style={styles.aboutText}>
+        Walkie is an independent artist creating music with emotion, energy and a modern sound.
+        Every track is built to connect, hit hard and stay with you.
+        <br /><br />
+        No filler. No shortcuts. Just real music.
+      </p>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer style={styles.footer}>
+      WALKIE • Official Artist Website
+    </footer>
+  );
+}
+
+// -------------------------------
+// MAIN APP
+// -------------------------------
+function App() {
+  return (
+    <div style={styles.page}>
+      <Navbar />
+      <Hero />
+      <Platforms />
+      <Releases />
+      <About />
+      <Footer />
+    </div>
+  );
+}
+
+// -------------------------------
+// STYLES (BIG SECTION)
+// -------------------------------
 const styles = {
+
   page: {
-    minHeight: "100vh",
     background: "#050507",
     color: "#fff",
-    fontFamily: "Inter, Arial",
-    padding: "40px 20px",
+    fontFamily: "Arial",
+  },
+
+  navbar: {
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "20px",
+    background: "rgba(0,0,0,0.7)",
+    backdropFilter: "blur(10px)",
+    zIndex: 10,
+  },
+
+  logo: {
+    fontWeight: 900,
+    letterSpacing: "4px",
+  },
+
+  navLinks: {
+    display: "flex",
+    gap: "20px",
   },
 
   hero: {
     textAlign: "center",
+    padding: "140px 20px 80px",
     position: "relative",
-    marginBottom: "60px",
   },
 
-  glow: {
+  heroGlow: {
     position: "absolute",
-    width: "400px",
-    height: "400px",
-    background: "rgba(255,255,255,0.1)",
-    filter: "blur(100px)",
+    width: "600px",
+    height: "600px",
+    background: "radial-gradient(circle, rgba(255,255,255,0.15), transparent)",
+    filter: "blur(140px)",
     left: "50%",
     transform: "translateX(-50%)",
+    top: "-200px",
   },
 
-  title: {
-    fontSize: "120px",
+  heroTitle: {
+    fontSize: "150px",
     fontWeight: 900,
-    letterSpacing: "6px",
+    letterSpacing: "10px",
   },
 
-  subtitle: {
+  heroSubtitle: {
     color: "#aaa",
     marginTop: "10px",
   },
 
-  buttons: {
-    marginTop: "20px",
+  heroButtons: {
+    marginTop: "30px",
     display: "flex",
     justifyContent: "center",
-    gap: "12px",
+    gap: "16px",
   },
 
-  btnMain: {
-    padding: "14px 20px",
+  mainBtn: {
+    padding: "16px 26px",
     background: "#fff",
     color: "#000",
     borderRadius: "12px",
     textDecoration: "none",
   },
 
-  btnAlt: {
-    padding: "14px 20px",
-    border: "1px solid #333",
+  altBtn: {
+    padding: "16px 26px",
+    border: "1px solid #444",
     borderRadius: "12px",
     textDecoration: "none",
     color: "#fff",
   },
 
   section: {
-    maxWidth: "800px",
+    padding: "60px 20px",
+    maxWidth: "1000px",
     margin: "0 auto",
   },
 
-  heading: {
+  sectionTitle: {
+    fontSize: "30px",
+    fontWeight: 900,
     marginBottom: "20px",
   },
 
-  card: {
+  platformGrid: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+  },
+
+  platformCard: {
     display: "flex",
     justifyContent: "space-between",
     padding: "18px",
     background: "#111",
     borderRadius: "14px",
-    marginBottom: "12px",
     textDecoration: "none",
     color: "#fff",
-    transition: "0.2s",
   },
 
-  left: {
+  platformLeft: {
     display: "flex",
-    gap: "12px",
+    flexDirection: "column",
   },
 
-  cardTitle: {
-    fontWeight: 700,
+  platformName: {
+    fontWeight: 800,
   },
 
-  cardSub: {
+  platformSub: {
     fontSize: "13px",
     color: "#aaa",
   },
 
+  arrow: {
+    opacity: 0.6,
+  },
+
+  releaseGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    gap: "20px",
+  },
+
+  releaseCard: {
+    background: "#111",
+    padding: "24px",
+    borderRadius: "16px",
+  },
+
+  releaseTitle: {
+    fontSize: "22px",
+    fontWeight: 800,
+  },
+
+  releaseDesc: {
+    color: "#aaa",
+    marginBottom: "12px",
+  },
+
+  aboutText: {
+    color: "#aaa",
+    lineHeight: "1.6",
+  },
+
   footer: {
     textAlign: "center",
-    marginTop: "60px",
+    padding: "40px",
     color: "#666",
   },
 };
 
-// ===============================
+// -------------------------------
 // RENDER
-// ===============================
+// -------------------------------
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
