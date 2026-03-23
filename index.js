@@ -29,9 +29,7 @@ const links = [
     url: "https://music.apple.com/us/artist/walkie-music/1875428459",
     color: "#FC3F5F",
     svg: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="24" height="24" rx="6" fill="#000"/>
-      <path fill="#FC3F5F" d="M12 3v18M6 9l6-6 6 6M6 15l6 6 6-6"/>
-      <circle cx="12" cy="12" r="10" fill="none" stroke="#A5AAAD" stroke-width="1"/>
+      <path d="M16 3v12.5a2.5 2.5 0 1 1-1-2V6.5l4-1V14a2.5 2.5 0 1 1-1-2V4l-2 .5z" fill="#FC3F5F"/>
     </svg>`,
   },
   {
@@ -39,9 +37,7 @@ const links = [
     url: "https://www.tiktok.com/@walkiemusic",
     color: "#FE2C55",
     svg: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path fill="#000" d="M12.53 0.02C13.84 0 15.14.01 16.44.01c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.99-.57-.26-1.1-.59-1.62-.93v8.28c0 2.92-2.36 5.29-5.28 5.29-2.92 0-5.28-2.37-5.28-5.29s2.36-5.29 5.28-5.29c.68 0 1.32.13 1.91.36v-4.15c-1.22-.28-2.38-.9-3.35-1.8-1.98-1.84-2.42-4.73-1.41-7.09.43-.99 1.18-1.85 2.12-2.4.94-.56 2.01-.84 3.08-.84z"/>
-      <path fill="#25F4EE" d="M12.53 2.02c-.07 1.53-.63 3.09-1.75 4.17-1.12 1.11-2.7 1.62-4.24 1.79V2.02h6z" opacity="0.8"/>
-      <path fill="#FE2C55" d="M12.53 2.02c-.07 1.53-.63 3.09-1.75 4.17-1.12 1.11-2.7 1.62-4.24 1.79V2.02h6z" opacity="0.8"/>
+      <path fill="#FFFFFF" d="M14 3c.3 1.6 1.6 3 3.2 3.3v3.2c-1.1-.1-2.2-.5-3.2-1.1v5.5a4.5 4.5 0 1 1-4.5-4.5c.3 0 .6 0 .9.1v3.2a1.5 1.5 0 1 0 1.1 1.5V3H14z"/>
     </svg>`,
   },
 ];
@@ -62,7 +58,7 @@ function Navbar() {
   return (
     <nav style={styles.navbar}>
       <div style={styles.logo}>WALKIE</div>
-      <div style={{ ...styles.navLinks, ...(window.innerWidth <= 768 ? { display: isOpen ? 'flex' : 'none' } : {}) }}>
+      <div style={{ ...styles.navLinks, ...(window.innerWidth <= 768 ? { display: isOpen ? "flex" : "none" } : {}) }}>
         <a href="#home" style={styles.navLink} onClick={close}>Home</a>
         <a href="#connect" style={styles.navLink} onClick={close}>Connect</a>
       </div>
@@ -98,7 +94,7 @@ function ConnectSection() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ ...styles.platformCard, '--accent': item.color }}
+            style={{ ...styles.platformCard, "--accent": item.color }}
           >
             <div style={styles.iconWrap}>
               <div dangerouslySetInnerHTML={{ __html: item.svg }} style={styles.icon} />
@@ -116,11 +112,10 @@ function About() {
     <section style={styles.section}>
       <h2 style={styles.sectionTitle}>Walkie DNA</h2>
       <p style={styles.aboutText}>
-        Born in the streets of South Africa.<br />
-        Forged in the energy of New Zealand.<br /><br />
+        South African born. New Zealand based.<br /><br />
+        WALKIE blends raw storytelling with cinematic production — delivering music built on energy, identity, and real emotion.<br /><br />
         No trends. No shortcuts.<br />
-        Just powerful bars, cinematic beats,<br />
-        loyalty, hustle, and emotion that hits deep.
+        Just authentic sound, powerful moments, and music that stays with you.
       </p>
     </section>
   );
@@ -137,20 +132,19 @@ function Footer() {
 
 function App() {
   useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.innerHTML = globalCss;
     document.head.appendChild(style);
 
-    // Scroll reveal observer
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-active');
+          entry.target.classList.add("reveal-active");
         }
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
