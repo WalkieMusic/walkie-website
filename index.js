@@ -58,7 +58,7 @@ function Navbar() {
   return (
     <nav style={styles.navbar}>
       <div style={styles.logo}>WALKIE</div>
-      <div style={{ ...styles.navLinks, ...(window.innerWidth <= 768 ? { display: isOpen ? "flex" : "none" } : {}) }}>
+      <div style={{ ...styles.navLinks, ...(window.innerWidth <= 768 ? { display: isOpen ? 'flex' : 'none' } : {}) }}>
         <a href="#home" style={styles.navLink} onClick={close}>Home</a>
         <a href="#connect" style={styles.navLink} onClick={close}>Connect</a>
       </div>
@@ -94,7 +94,7 @@ function ConnectSection() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ ...styles.platformCard, "--accent": item.color }}
+            style={{ ...styles.platformCard, '--accent': item.color }}
           >
             <div style={styles.iconWrap}>
               <div dangerouslySetInnerHTML={{ __html: item.svg }} style={styles.icon} />
@@ -112,8 +112,7 @@ function About() {
     <section style={styles.section}>
       <h2 style={styles.sectionTitle}>Walkie DNA</h2>
       <p style={styles.aboutText}>
-        South African born. New Zealand based.<br /><br />
-        WALKIE blends raw storytelling with cinematic production — delivering music built on energy, identity, and real emotion.<br /><br />
+        WALKIE delivers raw storytelling fused with cinematic production — creating music driven by energy, identity, and real emotion.<br /><br />
         No trends. No shortcuts.<br />
         Just authentic sound, powerful moments, and music that stays with you.
       </p>
@@ -124,7 +123,7 @@ function About() {
 function Footer() {
   return (
     <footer style={styles.footer}>
-      © {new Date().getFullYear()} WALKIE • Independent • SA × NZ
+      © {new Date().getFullYear()} WALKIE • Independent Artist
       <div style={styles.footerTag}>Real music. Real energy. No limits.</div>
     </footer>
   );
@@ -132,19 +131,20 @@ function Footer() {
 
 function App() {
   useEffect(() => {
-    const style = document.createElement("style");
+    const style = document.createElement('style');
     style.innerHTML = globalCss;
     document.head.appendChild(style);
 
+    // Scroll reveal observer
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-active");
+          entry.target.classList.add('reveal-active');
         }
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
