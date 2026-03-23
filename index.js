@@ -74,10 +74,8 @@ function Hero() {
       <div style={styles.glowLayer2} />
       <div style={styles.glowLayer3} />
       <h1 style={styles.heroTitle}>WALKIE</h1>
-      <p style={styles.heroSubtitle}>
-        South African fire.<br />
-        New Zealand steel.<br />
-        Raw. Cinematic. Unstoppable.
+     <p style={styles.heroSubtitle}>
+  Raw. Cinematic. Unstoppable.
       </p>
     </section>
   );
