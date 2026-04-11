@@ -1,6 +1,6 @@
 // ===============================
 // WALKIE – ULTIMATE PREMIUM ARTIST SITE
-// Mobile logo fixed + release announcement added
+// Updated for 17 April releases
 // ===============================
 const { useState, useEffect } = React;
 
@@ -38,6 +38,23 @@ const links = [
     svg: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path fill="#FFFFFF" d="M14 3c.3 1.6 1.6 3 3.2 3.3v3.2c-1.1-.1-2.2-.5-3.2-1.1v5.5a4.5 4.5 0 1 1-4.5-4.5c.3 0 .6 0 .9.1v3.2a1.5 1.5 0 1 0 1.1 1.5V3H14z"/>
     </svg>`,
+  },
+];
+
+const upcomingReleases = [
+  {
+    title: "Julle Bly In My",
+    date: "Releasing Friday 17 April",
+    image: "./julle-bly-in-my.png",
+    description:
+      "A warm, emotional new release from WALKIE with a cinematic feel that stays with you.",
+  },
+  {
+    title: "Naglig Bly",
+    date: "Releasing Friday 17 April",
+    image: "./naglig-bly.png",
+    description:
+      "A moody, intimate release with late-night energy, emotion, and a premium sound.",
   },
 ];
 
@@ -102,18 +119,34 @@ function Hero() {
 function ReleaseAnnouncement() {
   return (
     <section id="release" style={styles.section}>
-      <div style={styles.releaseCard}>
-        <div style={styles.releaseBadge}>NEW RELEASE ANNOUNCEMENT</div>
-        <h2 style={styles.releaseTitle}>Wat Ek Moes Word</h2>
-        <p style={styles.releaseDate}>Releasing 10 April</p>
+      <div style={styles.releaseIntroCard}>
+        <div style={styles.releaseBadge}>UPCOMING RELEASES</div>
+        <h2 style={styles.releaseTitle}>Two New Songs This Friday</h2>
+        <p style={styles.releaseDate}>17 April</p>
         <p style={styles.releaseText}>
-          A powerful new release from WALKIE. Cinematic, emotional, and built
-          with raw energy — <strong>Wat Ek Moes Word</strong> arrives on
-          <strong> 10 April</strong>.
+          Two new WALKIE releases are landing this Friday. Stay locked in and follow on all platforms so you do not miss them.
         </p>
-        <p style={styles.releaseTextSmall}>
-          Pre-save, follow, and stay locked in across all platforms.
-        </p>
+      </div>
+
+      <div style={styles.releaseGrid}>
+        {upcomingReleases.map((song) => (
+          <div key={song.title} style={styles.songCard}>
+            <div style={styles.songImageWrap}>
+              <img
+                src={song.image}
+                alt={song.title}
+                style={styles.songImage}
+              />
+            </div>
+
+            <div style={styles.songContent}>
+              <div style={styles.songBadge}>OUT THIS FRIDAY</div>
+              <h3 style={styles.songTitle}>{song.title}</h3>
+              <p style={styles.songDate}>{song.date}</p>
+              <p style={styles.songDescription}>{song.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -377,9 +410,9 @@ const styles = {
     animation: "gradientFlow 10s ease infinite",
   },
 
-  releaseCard: {
+  releaseIntroCard: {
     maxWidth: "950px",
-    margin: "0 auto",
+    margin: "0 auto 3rem",
     padding: "3rem 2rem",
     borderRadius: "28px",
     textAlign: "center",
@@ -421,17 +454,80 @@ const styles = {
   },
 
   releaseText: {
-    fontSize: "clamp(1rem, 3vw, 1.5rem)",
+    fontSize: "clamp(1rem, 3vw, 1.35rem)",
     lineHeight: 1.7,
     maxWidth: "760px",
-    margin: "0 auto 1rem",
+    margin: "0 auto",
     opacity: 0.92,
   },
 
-  releaseTextSmall: {
-    fontSize: "clamp(0.95rem, 2.8vw, 1.15rem)",
+  releaseGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gap: "2rem",
+  },
+
+  songCard: {
+    background: "rgba(124,58,237,0.06)",
+    border: "1px solid rgba(192,132,252,0.22)",
+    borderRadius: "28px",
+    overflow: "hidden",
+    boxShadow: "0 18px 50px rgba(0,0,0,0.35)",
+    backdropFilter: "blur(12px)",
+    transition: "transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease",
+  },
+
+  songImageWrap: {
+    width: "100%",
+    aspectRatio: "1 / 1",
+    overflow: "hidden",
+    background: "#0b0614",
+  },
+
+  songImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  songContent: {
+    padding: "1.5rem 1.4rem 1.8rem",
+    textAlign: "center",
+  },
+
+  songBadge: {
+    display: "inline-block",
+    padding: "0.45rem 0.9rem",
+    borderRadius: "999px",
+    fontSize: "0.75rem",
+    fontWeight: 800,
+    letterSpacing: "0.12em",
+    color: "#f5e9ff",
+    background: "rgba(192,132,252,0.16)",
+    border: "1px solid rgba(192,132,252,0.25)",
+    marginBottom: "1rem",
+  },
+
+  songTitle: {
+    fontSize: "clamp(1.7rem, 5vw, 2.5rem)",
+    fontWeight: 900,
+    lineHeight: 1.1,
+    margin: "0 0 0.75rem",
+    color: "#ffffff",
+  },
+
+  songDate: {
+    fontSize: "1rem",
+    fontWeight: 800,
+    color: "#c084fc",
+    margin: "0 0 1rem",
+  },
+
+  songDescription: {
+    fontSize: "1rem",
     lineHeight: 1.7,
-    opacity: 0.75,
+    opacity: 0.85,
     margin: 0,
   },
 
@@ -519,6 +615,10 @@ body {
   background: #000;
 }
 
+img {
+  max-width: 100%;
+}
+
 @keyframes shineText {
   0% { background-position: -400%; }
   100% { background-position: 400%; }
@@ -555,6 +655,12 @@ body {
   transform: translateY(-16px) scale(1.04);
   box-shadow: 0 30px 80px rgba(124,58,237,0.35);
   border-color: var(--accent, #c084fc);
+}
+
+@media (hover: hover) {
+  .songCard-hover:hover {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 768px) {
