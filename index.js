@@ -1,6 +1,6 @@
 // ===============================
 // WALKIE – ULTIMATE PREMIUM ARTIST SITE
-// Updated for 17 April releases
+// Now Streaming + Upcoming Releases
 // ===============================
 const { useState, useEffect } = React;
 
@@ -19,7 +19,7 @@ const links = [
     url: "https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw",
     color: "#FF0000",
     svg: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path fill="#FF0000" d="M21.5 6.8c-.3-1.1-1.2-2-2.3-2.3C17.4 4 12 4 12 4s-5.4 0-7.2.5c-1.1.3-2 1.2-2.3 2.3C2 8.6 2 12 2 12s0 3.4.5 5.2c.3 1.1 1.2 2 2.3 2.3C6.6 20 12 20 12 20s5.4 0 7.2-.5c1.1-.3 2-2 2.3-2.3.5-1.8.5-5.2.5-5.2s0-3.4-.5-5.2z"/>
+      <path fill="#FF0000" d="M21.5 6.8c-.3-1.1-1.2-2-2.3-2.3C17.4 4 12 4 12 4s-5.4 0-7.2.5c-1.1.3-2 1.2-2.3 2.3C2 8.6 2 12 2 12s0 3.4.5 5.2c.3 1.1 1.2 1.2 2.3 2.3C6.6 20 12 20 12 20s5.4 0 7.2-.5c1.1-.3 2-1.2 2.3-2.3.5-1.8.5-5.2.5-5.2s0-3.4-.5-5.2z"/>
       <polygon fill="#FFFFFF" points="10 15.5 15 12 10 8.5"/>
     </svg>`,
   },
@@ -40,6 +40,14 @@ const links = [
     </svg>`,
   },
 ];
+
+const nowStreaming = {
+  title: "Wat Ek Moes Word",
+  date: "Now Streaming",
+  image: "/cover.jpg.png",
+  description:
+    "Now streaming across platforms — a cinematic WALKIE release built with raw emotion, power, and identity.",
+};
 
 const upcomingReleases = [
   {
@@ -95,7 +103,8 @@ function Navbar() {
         }}
       >
         <a href="#home" style={styles.navLink} onClick={close}>Home</a>
-        <a href="#release" style={styles.navLink} onClick={close}>Release</a>
+        <a href="#streaming" style={styles.navLink} onClick={close}>Streaming</a>
+        <a href="#release" style={styles.navLink} onClick={close}>Releases</a>
         <a href="#connect" style={styles.navLink} onClick={close}>Connect</a>
       </div>
 
@@ -116,13 +125,63 @@ function Hero() {
   );
 }
 
+function NowStreamingSection() {
+  return (
+    <section id="streaming" style={styles.section}>
+      <div style={styles.releaseIntroCard}>
+        <div style={styles.streamingBadge}>NOW STREAMING</div>
+        <h2 style={styles.releaseTitle}>Wat Ek Moes Word</h2>
+        <p style={styles.releaseDate}>Out Now</p>
+        <p style={styles.releaseText}>
+          Stream the latest WALKIE release now and follow across all platforms for more music dropping this Friday.
+        </p>
+      </div>
+
+      <div style={styles.streamingCard}>
+        <div style={styles.streamingImageWrap}>
+          <img
+            src={nowStreaming.image}
+            alt={nowStreaming.title}
+            style={styles.streamingImage}
+          />
+        </div>
+
+        <div style={styles.streamingContent}>
+          <div style={styles.streamingStatus}>OUT NOW</div>
+          <h3 style={styles.streamingTitle}>{nowStreaming.title}</h3>
+          <p style={styles.streamingDate}>{nowStreaming.date}</p>
+          <p style={styles.streamingDescription}>{nowStreaming.description}</p>
+
+          <div style={styles.streamingButtons}>
+            <a
+              href="https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.primaryButton}
+            >
+              Listen on Spotify
+            </a>
+            <a
+              href="https://music.apple.com/us/artist/walkie-music/1875428459"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.secondaryButton}
+            >
+              Listen on Apple Music
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ReleaseAnnouncement() {
   return (
     <section id="release" style={styles.section}>
       <div style={styles.releaseIntroCard}>
         <div style={styles.releaseBadge}>UPCOMING RELEASES</div>
-        <h2 style={styles.releaseTitle}>Two New Songs This Friday</h2>
-        <p style={styles.releaseDate}>17 April</p>
+        <h2 style={styles.releaseTitle}>OUT THIS FRIDAY • 17 APRIL</h2>
         <p style={styles.releaseText}>
           Two new WALKIE releases are landing this Friday. Stay locked in and follow on all platforms so you do not miss them.
         </p>
@@ -227,6 +286,7 @@ function App() {
     <div style={styles.page}>
       <Navbar />
       <Hero />
+      <div className="reveal"><NowStreamingSection /></div>
       <div className="reveal"><ReleaseAnnouncement /></div>
       <div className="reveal"><ConnectSection /></div>
       <div className="reveal"><About /></div>
@@ -330,7 +390,7 @@ const styles = {
   hero: {
     position: "relative",
     textAlign: "center",
-    padding: "clamp(220px, 40vh, 320px) 7% 140px",
+    padding: "clamp(220px, 40vh, 320px) 7% 120px",
     overflow: "hidden",
   },
 
@@ -392,7 +452,7 @@ const styles = {
   },
 
   section: {
-    padding: "clamp(90px, 14vw, 180px) 7%",
+    padding: "clamp(70px, 10vw, 140px) 7%",
     maxWidth: "1300px",
     margin: "0 auto",
   },
@@ -435,6 +495,19 @@ const styles = {
     marginBottom: "1.2rem",
   },
 
+  streamingBadge: {
+    display: "inline-block",
+    padding: "0.55rem 1rem",
+    borderRadius: "999px",
+    fontSize: "0.82rem",
+    fontWeight: 800,
+    letterSpacing: "0.14em",
+    color: "#f5e9ff",
+    background: "rgba(96,165,250,0.16)",
+    border: "1px solid rgba(96,165,250,0.3)",
+    marginBottom: "1.2rem",
+  },
+
   releaseTitle: {
     fontSize: "clamp(2.2rem, 8vw, 5.5rem)",
     fontWeight: 900,
@@ -461,6 +534,109 @@ const styles = {
     opacity: 0.92,
   },
 
+  streamingCard: {
+    display: "grid",
+    gridTemplateColumns: "minmax(280px, 430px) 1fr",
+    gap: "2rem",
+    alignItems: "stretch",
+    background: "rgba(124,58,237,0.06)",
+    border: "1px solid rgba(192,132,252,0.22)",
+    borderRadius: "32px",
+    overflow: "hidden",
+    boxShadow: "0 18px 50px rgba(0,0,0,0.35)",
+    backdropFilter: "blur(12px)",
+  },
+
+  streamingImageWrap: {
+    width: "100%",
+    minHeight: "100%",
+    background: "#0b0614",
+  },
+
+  streamingImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    display: "block",
+  },
+
+  streamingContent: {
+    padding: "2.2rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+
+  streamingStatus: {
+    display: "inline-block",
+    alignSelf: "flex-start",
+    padding: "0.5rem 1rem",
+    borderRadius: "999px",
+    fontSize: "0.8rem",
+    fontWeight: 800,
+    letterSpacing: "0.12em",
+    color: "#f5e9ff",
+    background: "rgba(96,165,250,0.16)",
+    border: "1px solid rgba(96,165,250,0.28)",
+    marginBottom: "1rem",
+  },
+
+  streamingTitle: {
+    fontSize: "clamp(2rem, 6vw, 4rem)",
+    fontWeight: 900,
+    lineHeight: 1.05,
+    margin: "0 0 0.75rem",
+    color: "#fff",
+  },
+
+  streamingDate: {
+    fontSize: "1.2rem",
+    fontWeight: 800,
+    color: "#60a5fa",
+    margin: "0 0 1rem",
+  },
+
+  streamingDescription: {
+    fontSize: "1.05rem",
+    lineHeight: 1.8,
+    opacity: 0.88,
+    margin: "0 0 1.5rem",
+    maxWidth: "650px",
+  },
+
+  streamingButtons: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "1rem",
+    marginTop: "0.5rem",
+  },
+
+  primaryButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0.95rem 1.4rem",
+    borderRadius: "999px",
+    background: "linear-gradient(90deg, #7c3aed, #60a5fa)",
+    color: "#fff",
+    textDecoration: "none",
+    fontWeight: 800,
+    boxShadow: "0 12px 28px rgba(124,58,237,0.35)",
+  },
+
+  secondaryButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0.95rem 1.4rem",
+    borderRadius: "999px",
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(192,132,252,0.28)",
+    color: "#fff",
+    textDecoration: "none",
+    fontWeight: 800,
+  },
+
   releaseGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -474,7 +650,6 @@ const styles = {
     overflow: "hidden",
     boxShadow: "0 18px 50px rgba(0,0,0,0.35)",
     backdropFilter: "blur(12px)",
-    transition: "transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease",
   },
 
   songImageWrap: {
@@ -657,9 +832,9 @@ img {
   border-color: var(--accent, #c084fc);
 }
 
-@media (hover: hover) {
-  .songCard-hover:hover {
-    transform: translateY(-10px);
+@media (max-width: 900px) {
+  .streamingCardMobile {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -678,4 +853,77 @@ img {
 }
 `;
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+function ResponsiveWrapper() {
+  useEffect(() => {
+    const updateStreamingLayout = () => {
+      const cards = document.querySelectorAll("[data-streaming-card]");
+      cards.forEach((card) => {
+        if (window.innerWidth <= 900) {
+          card.classList.add("streamingCardMobile");
+        } else {
+          card.classList.remove("streamingCardMobile");
+        }
+      });
+    };
+
+    updateStreamingLayout();
+    window.addEventListener("resize", updateStreamingLayout);
+    return () => window.removeEventListener("resize", updateStreamingLayout);
+  }, []);
+
+  return <App />;
+}
+
+const originalNowStreamingSection = NowStreamingSection;
+NowStreamingSection = function WrappedNowStreamingSection() {
+  return (
+    <section id="streaming" style={styles.section}>
+      <div style={styles.releaseIntroCard}>
+        <div style={styles.streamingBadge}>NOW STREAMING</div>
+        <h2 style={styles.releaseTitle}>Wat Ek Moes Word</h2>
+        <p style={styles.releaseDate}>Out Now</p>
+        <p style={styles.releaseText}>
+          Stream the latest WALKIE release now and follow across all platforms for more music dropping this Friday.
+        </p>
+      </div>
+
+      <div style={styles.streamingCard} data-streaming-card="true">
+        <div style={styles.streamingImageWrap}>
+          <img
+            src={nowStreaming.image}
+            alt={nowStreaming.title}
+            style={styles.streamingImage}
+          />
+        </div>
+
+        <div style={styles.streamingContent}>
+          <div style={styles.streamingStatus}>OUT NOW</div>
+          <h3 style={styles.streamingTitle}>{nowStreaming.title}</h3>
+          <p style={styles.streamingDate}>{nowStreaming.date}</p>
+          <p style={styles.streamingDescription}>{nowStreaming.description}</p>
+
+          <div style={styles.streamingButtons}>
+            <a
+              href="https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.primaryButton}
+            >
+              Listen on Spotify
+            </a>
+            <a
+              href="https://music.apple.com/us/artist/walkie-music/1875428459"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.secondaryButton}
+            >
+              Listen on Apple Music
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<ResponsiveWrapper />);
