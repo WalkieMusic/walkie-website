@@ -45,14 +45,14 @@ const upcomingReleases = [
   {
     title: "Julle Bly In My",
     date: "Releasing Friday 17 April",
-    image: "./julle-bly-in-my.png",
+    image: "/julle-bly-in-my.png",
     description:
       "A warm, emotional new release from WALKIE with a cinematic feel that stays with you.",
   },
   {
     title: "Naglig Bly",
     date: "Releasing Friday 17 April",
-    image: "./naglig-bly.png",
+    image: "/naglig-bly.png",
     description:
       "A moody, intimate release with late-night energy, emotion, and a premium sound.",
   },
