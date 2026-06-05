@@ -20,7 +20,7 @@ const links = [
   },
   {
     name: "Early Releases",
-    url: "https://youtube.com/@walkiemusicofficial?si=Hb8IdOIsBVFPDsy-",
+    url: "https://youtube.com/@walkiemusicofficial",
     color: "#FF0000",
     svg: youtubeSvg,
   },
@@ -49,7 +49,10 @@ function App() {
     <div style={styles.page}>
       <nav style={styles.navbar}>
         <div style={styles.logo}>WALKIE</div>
-        <a href="#links" style={styles.navLink}>Links</a>
+        <div style={styles.navLinks}>
+          <a href="#links" style={styles.navLink}>Links</a>
+          <a href="#releases" style={styles.navLink}>Releases</a>
+        </div>
       </nav>
 
       <section style={styles.hero}>
@@ -83,6 +86,35 @@ function App() {
             </a>
           ))}
         </div>
+      </section>
+
+      <section id="releases" style={styles.section}>
+        <h2 style={styles.sectionTitle}>Latest Early Releases</h2>
+        <p style={styles.releaseText}>
+          New songs from my release channel. Updated automatically when I upload.
+        </p>
+
+        <div style={styles.youtubeBox}>
+          <iframe
+            width="100%"
+            height="430"
+            src="https://www.youtube.com/embed/videoseries?list=UUVWzHW47pjUYAu6DM2TUezw"
+            title="Latest Early Releases"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            style={styles.youtubeFrame}
+          ></iframe>
+        </div>
+
+        <a
+          href="https://youtube.com/@walkiemusicofficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.releaseButton}
+        >
+          Open Early Release Channel
+        </a>
       </section>
 
       <footer style={styles.footer}>
@@ -125,6 +157,12 @@ const styles = {
     WebkitBackgroundClip: "text",
     backgroundClip: "text",
     WebkitTextFillColor: "transparent",
+  },
+
+  navLinks: {
+    display: "flex",
+    gap: "1rem",
+    alignItems: "center",
   },
 
   navLink: {
@@ -269,6 +307,43 @@ const styles = {
     textAlign: "center",
   },
 
+  releaseText: {
+    textAlign: "center",
+    maxWidth: "720px",
+    margin: "-2rem auto 2.5rem",
+    fontSize: "1.1rem",
+    opacity: 0.78,
+  },
+
+  youtubeBox: {
+    maxWidth: "920px",
+    margin: "0 auto",
+    borderRadius: "30px",
+    overflow: "hidden",
+    border: "1px solid rgba(192,132,252,0.28)",
+    boxShadow: "0 25px 80px rgba(0,0,0,0.48)",
+    background: "rgba(255,255,255,0.04)",
+  },
+
+  youtubeFrame: {
+    display: "block",
+    border: "none",
+    borderRadius: "30px",
+  },
+
+  releaseButton: {
+    display: "block",
+    width: "fit-content",
+    margin: "2rem auto 0",
+    padding: "1rem 1.5rem",
+    borderRadius: "999px",
+    textDecoration: "none",
+    color: "#fff",
+    fontWeight: 900,
+    background: "linear-gradient(90deg, #ff0000, #7c3aed)",
+    boxShadow: "0 18px 55px rgba(255,0,0,0.25)",
+  },
+
   footer: {
     textAlign: "center",
     padding: "70px 7%",
@@ -305,6 +380,10 @@ body {
 @media (max-width: 768px) {
   .platformCard:hover {
     transform: none;
+  }
+
+  iframe {
+    height: 310px !important;
   }
 }
 `;
