@@ -51,7 +51,7 @@ function App() {
         <div style={styles.logo}>WALKIE</div>
         <div style={styles.navLinks}>
           <a href="#links" style={styles.navLink}>Links</a>
-          <a href="#releases" style={styles.navLink}>Releases</a>
+          <a href="#youtube" style={styles.navLink}>YouTube</a>
         </div>
       </nav>
 
@@ -61,7 +61,7 @@ function App() {
 
         <div style={styles.badge}>OFFICIAL MUSIC LINKS</div>
         <h1 style={styles.heroTitle}>WALKIE</h1>
-        <p style={styles.heroText}>Raw. Cinematic. Unstoppable.</p>
+        <p style={styles.heroText}>Dreaming big through music.</p>
 
         <a href="#links" style={styles.mainButton}>Follow My Music</a>
       </section>
@@ -88,38 +88,48 @@ function App() {
         </div>
       </section>
 
-      <section id="releases" style={styles.section}>
-        <h2 style={styles.sectionTitle}>Latest Early Releases</h2>
+      <section id="youtube" style={styles.section}>
+        <h2 style={styles.sectionTitle}>YouTube Channels</h2>
+
         <p style={styles.releaseText}>
-          New songs from my release channel. Updated automatically when I upload.
+          WALKIE Music currently has two official YouTube channels while the Official Artist Channel merge is being completed.
+          The main channel is for official distributed releases, while the Early Release channel is where new songs are uploaded first.
         </p>
 
-        <div style={styles.youtubeBox}>
-          <iframe
-            width="100%"
-            height="430"
-            src="https://www.youtube.com/embed/videoseries?list=UUVWzHW47pjUYAu6DM2TUezw"
-            title="Latest Early Releases"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            style={styles.youtubeFrame}
-          ></iframe>
-        </div>
+        <div style={styles.platformGrid}>
+          <a
+            href="https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="platformCard"
+            style={{ ...styles.platformCard, "--accent": "#FF0000" }}
+          >
+            <div style={styles.iconWrap}>
+              <div dangerouslySetInnerHTML={{ __html: youtubeSvg }} style={styles.icon} />
+            </div>
+            <span style={styles.platformName}>Main YouTube Channel</span>
+            <span style={styles.channelNote}>Official distributed releases</span>
+          </a>
 
-        <a
-          href="https://youtube.com/@walkiemusicofficial"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={styles.releaseButton}
-        >
-          Open Early Release Channel
-        </a>
+          <a
+            href="https://youtube.com/@walkiemusicofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="platformCard"
+            style={{ ...styles.platformCard, "--accent": "#FF0000" }}
+          >
+            <div style={styles.iconWrap}>
+              <div dangerouslySetInnerHTML={{ __html: youtubeSvg }} style={styles.icon} />
+            </div>
+            <span style={styles.platformName}>Early Release Channel</span>
+            <span style={styles.channelNote}>New songs uploaded first</span>
+          </a>
+        </div>
       </section>
 
       <footer style={styles.footer}>
         © {new Date().getFullYear()} WALKIE • Independent Artist
-        <div style={styles.footerTag}>Real music. Real energy. No limits.</div>
+        <div style={styles.footerTag}>Dreaming big through music.</div>
       </footer>
     </div>
   );
@@ -309,39 +319,18 @@ const styles = {
 
   releaseText: {
     textAlign: "center",
-    maxWidth: "720px",
-    margin: "-2rem auto 2.5rem",
+    maxWidth: "850px",
+    margin: "-2rem auto 3rem",
     fontSize: "1.1rem",
-    opacity: 0.78,
+    opacity: 0.82,
+    lineHeight: 1.8,
   },
 
-  youtubeBox: {
-    maxWidth: "920px",
-    margin: "0 auto",
-    borderRadius: "30px",
-    overflow: "hidden",
-    border: "1px solid rgba(192,132,252,0.28)",
-    boxShadow: "0 25px 80px rgba(0,0,0,0.48)",
-    background: "rgba(255,255,255,0.04)",
-  },
-
-  youtubeFrame: {
-    display: "block",
-    border: "none",
-    borderRadius: "30px",
-  },
-
-  releaseButton: {
-    display: "block",
-    width: "fit-content",
-    margin: "2rem auto 0",
-    padding: "1rem 1.5rem",
-    borderRadius: "999px",
-    textDecoration: "none",
-    color: "#fff",
-    fontWeight: 900,
-    background: "linear-gradient(90deg, #ff0000, #7c3aed)",
-    boxShadow: "0 18px 55px rgba(255,0,0,0.25)",
+  channelNote: {
+    marginTop: "0.7rem",
+    fontSize: "0.95rem",
+    opacity: 0.68,
+    textAlign: "center",
   },
 
   footer: {
@@ -380,10 +369,6 @@ body {
 @media (max-width: 768px) {
   .platformCard:hover {
     transform: none;
-  }
-
-  iframe {
-    height: 310px !important;
   }
 }
 `;
