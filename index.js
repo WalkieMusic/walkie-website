@@ -143,7 +143,6 @@ const styles = {
     minHeight: "100vh",
     overflowX: "hidden",
   },
-
   navbar: {
     position: "fixed",
     top: 0,
@@ -158,7 +157,6 @@ const styles = {
     backdropFilter: "blur(24px)",
     borderBottom: "1px solid rgba(192,132,252,0.18)",
   },
-
   logo: {
     fontSize: "clamp(1.6rem, 6vw, 3rem)",
     fontWeight: 950,
@@ -168,27 +166,23 @@ const styles = {
     backgroundClip: "text",
     WebkitTextFillColor: "transparent",
   },
-
   navLinks: {
     display: "flex",
     gap: "1rem",
     alignItems: "center",
   },
-
   navLink: {
     color: "#ffffff",
     textDecoration: "none",
     fontWeight: 800,
     fontSize: "1rem",
   },
-
   hero: {
     position: "relative",
     textAlign: "center",
     padding: "220px 7% 120px",
     overflow: "hidden",
   },
-
   glowOne: {
     position: "absolute",
     width: "900px",
@@ -198,7 +192,6 @@ const styles = {
     background: "radial-gradient(circle, rgba(124,58,237,0.45), transparent 65%)",
     filter: "blur(120px)",
   },
-
   glowTwo: {
     position: "absolute",
     width: "900px",
@@ -208,7 +201,6 @@ const styles = {
     background: "radial-gradient(circle, rgba(96,165,250,0.30), transparent 65%)",
     filter: "blur(140px)",
   },
-
   badge: {
     position: "relative",
     display: "inline-block",
@@ -221,7 +213,6 @@ const styles = {
     fontSize: "0.78rem",
     marginBottom: "1.6rem",
   },
-
   heroTitle: {
     position: "relative",
     fontSize: "clamp(5rem, 22vw, 18rem)",
@@ -236,14 +227,12 @@ const styles = {
     backgroundSize: "400% 100%",
     animation: "shineText 14s linear infinite",
   },
-
   heroText: {
     position: "relative",
     fontSize: "clamp(1.2rem, 5vw, 2.5rem)",
     opacity: 0.9,
     margin: "1.5rem 0 2.2rem",
   },
-
   mainButton: {
     position: "relative",
     display: "inline-block",
@@ -255,13 +244,11 @@ const styles = {
     background: "linear-gradient(90deg, #7c3aed, #c084fc, #60a5fa)",
     boxShadow: "0 18px 55px rgba(124,58,237,0.45)",
   },
-
   section: {
     padding: "80px 7% 130px",
     maxWidth: "1200px",
     margin: "0 auto",
   },
-
   sectionTitle: {
     fontSize: "clamp(2.4rem, 9vw, 6rem)",
     fontWeight: 950,
@@ -272,13 +259,11 @@ const styles = {
     backgroundClip: "text",
     WebkitTextFillColor: "transparent",
   },
-
   platformGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
     gap: "1.6rem",
   },
-
   platformCard: {
     display: "flex",
     flexDirection: "column",
@@ -293,7 +278,6 @@ const styles = {
     backdropFilter: "blur(16px)",
     boxShadow: "0 18px 50px rgba(0,0,0,0.35)",
   },
-
   iconWrap: {
     width: "88px",
     height: "88px",
@@ -305,18 +289,15 @@ const styles = {
     justifyContent: "center",
     boxShadow: "inset 0 0 25px rgba(255,255,255,0.04), 0 10px 30px rgba(0,0,0,0.4)",
   },
-
   icon: {
     width: "68%",
     height: "68%",
   },
-
   platformName: {
     fontSize: "1.35rem",
     fontWeight: 900,
     textAlign: "center",
   },
-
   releaseText: {
     textAlign: "center",
     maxWidth: "850px",
@@ -325,21 +306,18 @@ const styles = {
     opacity: 0.82,
     lineHeight: 1.8,
   },
-
   channelNote: {
     marginTop: "0.7rem",
     fontSize: "0.95rem",
     opacity: 0.68,
     textAlign: "center",
   },
-
   footer: {
     textAlign: "center",
     padding: "70px 7%",
     opacity: 0.75,
     borderTop: "1px solid rgba(192,132,252,0.15)",
   },
-
   footerTag: {
     marginTop: "0.8rem",
     opacity: 0.6,
@@ -348,7 +326,9 @@ const styles = {
 
 const globalCss = `
 * { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   overflow-x: hidden;
