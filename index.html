@@ -3,16 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Walkie Music</title>
+  <title>WALKIE Music</title>
+  <style>
+    * { box-sizing: border-box; }
 
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #211044 0%, #07020f 45%, #000 100%);
+      color: white;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+    }
+
+    h1 {
+      font-size: clamp(60px, 18vw, 180px);
+      margin: 40px 0 10px;
+      background: linear-gradient(90deg, #fff, #c084fc, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    p {
+      font-size: 22px;
+      color: #ddd;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid #c084fc;
+      border-radius: 999px;
+      color: #d8b4fe;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .links {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    a.card {
+      display: block;
+      padding: 28px 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(192,132,252,0.35);
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    a.card:hover {
+      transform: translateY(-6px);
+      border-color: #c084fc;
+    }
+
+    .note {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    footer {
+      padding: 50px 20px;
+      color: #aaa;
+    }
+  </style>
 </head>
 
-<body style="margin:0;background:#09090b;">
-  <div id="root"></div>
+<body>
+  <header>
+    <div class="badge">OFFICIAL MUSIC LINKS</div>
+    <h1>WALKIE</h1>
+    <p>Dreaming big through music.</p>
+  </header>
 
-  <script type="text/babel" src="index.js?v=999"></script>
+  <section class="links">
+    <a class="card" href="https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M" target="_blank">Spotify</a>
+    <a class="card" href="https://www.youtube.com/channel/UCrKt3xZWrvMnxyPcjAY8iZw" target="_blank">Main YouTube</a>
+    <a class="card" href="https://youtube.com/@walkiemusicofficial" target="_blank">Early Releases</a>
+    <a class="card" href="https://music.apple.com/us/artist/walkie-music/1875428459" target="_blank">Apple Music</a>
+    <a class="card" href="https://www.tiktok.com/@walkiemusic" target="_blank">TikTok</a>
+  </section>
+
+  <section class="note">
+    WALKIE Music currently has two official YouTube channels while the Official Artist Channel merge is being completed.
+    The main channel is for official distributed releases, while the Early Release channel is where new songs are uploaded first.
+  </section>
+
+  <footer>
+    © 2026 WALKIE • Independent Artist<br>
+    Dreaming big through music.
+  </footer>
 </body>
 </html>
