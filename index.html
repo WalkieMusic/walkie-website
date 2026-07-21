@@ -29,21 +29,14 @@
   <style>
     :root {
       --background: #050208;
-      --background-dark: #010102;
       --white: #ffffff;
       --muted: #aaa2b4;
-
       --pink: #ff2a9d;
       --purple: #9d50ff;
       --blue: #3cc8ff;
-      --gold: #ffd166;
-
       --border: rgba(255, 255, 255, 0.13);
       --glass: rgba(255, 255, 255, 0.055);
-      --glass-strong: rgba(255, 255, 255, 0.09);
-
-      --shadow:
-        0 30px 100px rgba(0, 0, 0, 0.55);
+      --shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
     }
 
     * {
@@ -59,7 +52,6 @@
     body {
       min-height: 100vh;
       overflow-x: hidden;
-
       font-family: "Inter", Arial, sans-serif;
       color: var(--white);
 
@@ -89,10 +81,8 @@
 
     body::before {
       content: "";
-
       position: fixed;
       inset: 0;
-
       z-index: -3;
       pointer-events: none;
 
@@ -117,28 +107,8 @@
         );
     }
 
-    body::after {
-      content: "";
-
-      position: fixed;
-      inset: 0;
-
-      z-index: 100;
-      pointer-events: none;
-
-      opacity: 0.025;
-
-      background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
-    }
-
     a {
       color: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -148,15 +118,11 @@
 
     .cursor-light {
       position: fixed;
-
       width: 430px;
       height: 430px;
-
       left: 50%;
       top: 50%;
-
       transform: translate(-50%, -50%);
-
       border-radius: 50%;
 
       background:
@@ -167,69 +133,46 @@
         );
 
       filter: blur(10px);
-
       pointer-events: none;
       z-index: -1;
     }
 
-    /* Navigation */
-
     .site-header {
       position: fixed;
-
       top: 16px;
       left: 0;
       right: 0;
-
       z-index: 50;
     }
 
     .nav {
       min-height: 66px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 20px;
-
-      padding:
-        10px
-        12px
-        10px
-        18px;
-
+      padding: 10px 12px 10px 18px;
       border: 1px solid var(--border);
       border-radius: 999px;
-
-      background:
-        rgba(5, 2, 8, 0.7);
-
-      box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.32);
-
+      background: rgba(5, 2, 8, 0.7);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
       backdrop-filter: blur(24px);
     }
 
     .brand {
       display: flex;
       align-items: center;
-
       gap: 11px;
-
       text-decoration: none;
     }
 
     .brand-logo {
       width: 42px;
       height: 42px;
-
       display: grid;
       place-items: center;
-
       border: 1px solid transparent;
       border-radius: 14px;
-
       font-family: "Montserrat", sans-serif;
       font-size: 18px;
       font-weight: 900;
@@ -260,30 +203,22 @@
     .nav-links {
       display: flex;
       align-items: center;
-
       gap: 5px;
     }
 
     .nav-links a {
       padding: 11px 15px;
-
       border-radius: 999px;
-
       text-decoration: none;
-
       color: #d8d1df;
-
       font-size: 14px;
       font-weight: 700;
-
       transition: 0.22s ease;
     }
 
     .nav-links a:hover {
       color: white;
-
-      background:
-        rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.07);
     }
 
     .nav-links .support-link {
@@ -302,137 +237,82 @@
 
     .menu-button {
       display: none;
-
       width: 44px;
       height: 44px;
-
       border: 1px solid var(--border);
       border-radius: 50%;
-
-      background:
-        rgba(255, 255, 255, 0.06);
-
+      background: rgba(255, 255, 255, 0.06);
       cursor: pointer;
     }
 
     .menu-button span {
       display: block;
-
       width: 18px;
       height: 2px;
-
       margin: 5px auto;
-
       background: white;
     }
 
-    /* Hero */
-
     .hero {
       min-height: 100svh;
-
       position: relative;
-
       display: grid;
       align-items: center;
-
       overflow: hidden;
-
-      padding:
-        140px
-        0
-        80px;
+      padding: 140px 0 80px;
     }
 
     .hero-glow {
       position: absolute;
-
       width: 500px;
       height: 500px;
-
       border-radius: 50%;
-
       filter: blur(85px);
-
       pointer-events: none;
     }
 
     .hero-glow-one {
       left: -210px;
       top: 100px;
-
-      background:
-        rgba(157, 80, 255, 0.33);
+      background: rgba(157, 80, 255, 0.33);
     }
 
     .hero-glow-two {
       right: -230px;
       bottom: -100px;
-
-      background:
-        rgba(60, 200, 255, 0.22);
+      background: rgba(60, 200, 255, 0.22);
     }
 
     .hero-grid {
       display: grid;
-
-      grid-template-columns:
-        1.04fr
-        0.96fr;
-
+      grid-template-columns: 1.04fr 0.96fr;
       align-items: center;
-
-      gap:
-        clamp(
-          50px,
-          7vw,
-          95px
-        );
+      gap: clamp(50px, 7vw, 95px);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-
       gap: 10px;
-
       margin-bottom: 26px;
-
-      padding:
-        10px
-        14px;
-
+      padding: 10px 14px;
       border: 1px solid var(--border);
       border-radius: 999px;
-
-      background:
-        rgba(255, 255, 255, 0.05);
-
+      background: rgba(255, 255, 255, 0.05);
       color: #ece6f4;
-
       font-size: 11px;
       font-weight: 900;
-
       letter-spacing: 0.2em;
-
       backdrop-filter: blur(15px);
     }
 
     .live-dot {
       width: 8px;
       height: 8px;
-
       border-radius: 50%;
-
       background: var(--pink);
-
-      box-shadow:
-        0 0 18px var(--pink);
-
-      animation:
-        pulse
-        1.7s
-        infinite;
+      box-shadow: 0 0 18px var(--pink);
+      animation: pulse 1.7s infinite;
     }
 
     @keyframes pulse {
@@ -443,27 +323,15 @@
     }
 
     .hero h1 {
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          66px,
-          9vw,
-          134px
-        );
-
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(66px, 9vw, 134px);
       line-height: 0.82;
-
       letter-spacing: -0.07em;
-
       text-transform: uppercase;
     }
 
     .hero h1 span {
       display: block;
-
       color: transparent;
 
       background:
@@ -480,65 +348,41 @@
 
       filter:
         drop-shadow(
-          0
-          0
-          36px
-          rgba(157, 80, 255, 0.22)
+          0 0 36px rgba(157, 80, 255, 0.22)
         );
     }
 
     .hero-description {
       max-width: 650px;
-
       margin-top: 28px;
-
       color: var(--muted);
-
-      font-size:
-        clamp(
-          17px,
-          2vw,
-          20px
-        );
-
+      font-size: clamp(17px, 2vw, 20px);
       line-height: 1.75;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-
       gap: 13px;
-
       margin-top: 34px;
     }
 
     .button {
       min-height: 56px;
-
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       gap: 10px;
-
-      padding:
-        0
-        24px;
-
+      padding: 0 24px;
       border: 1px solid transparent;
       border-radius: 999px;
-
       text-decoration: none;
-
       font-weight: 900;
-
       transition: 0.25s ease;
     }
 
     .button:hover {
-      transform:
-        translateY(-4px);
+      transform: translateY(-4px);
     }
 
     .button-primary {
@@ -550,78 +394,47 @@
         );
 
       box-shadow:
-        0
-        18px
-        50px
-        rgba(255, 42, 157, 0.25);
+        0 18px 50px rgba(255, 42, 157, 0.25);
     }
 
     .button-primary:hover {
       box-shadow:
-        0
-        24px
-        68px
-        rgba(255, 42, 157, 0.38);
+        0 24px 68px rgba(255, 42, 157, 0.38);
     }
 
     .button-secondary {
-      border-color:
-        var(--border);
-
-      background:
-        rgba(255, 255, 255, 0.05);
-
-      backdrop-filter:
-        blur(16px);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
     }
 
     .hero-small {
       display: flex;
       align-items: center;
-
       gap: 12px;
-
       margin-top: 24px;
-
       font-size: 13px;
     }
 
     .hero-small span {
       color: #8d8595;
-
       font-weight: 800;
-
       letter-spacing: 0.15em;
-
       text-transform: uppercase;
     }
 
-    /* Neon cover */
-
     .art-zone {
       position: relative;
-
-      width:
-        min(
-          100%,
-          510px
-        );
-
+      width: min(100%, 510px);
       margin-left: auto;
-
-      perspective:
-        1200px;
+      perspective: 1200px;
     }
 
     .vinyl {
       position: absolute;
-
       width: 78%;
-
       aspect-ratio: 1;
-
       top: 11%;
-
       border-radius: 50%;
 
       background:
@@ -633,18 +446,13 @@
         );
 
       box-shadow:
-        0
-        30px
-        70px
-        rgba(0, 0, 0, 0.55);
+        0 30px 70px rgba(0, 0, 0, 0.55);
     }
 
     .vinyl::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
       border-radius: 50%;
 
       background:
@@ -657,27 +465,19 @@
 
     .vinyl-left {
       left: -23%;
-
-      transform:
-        rotate(-9deg);
+      transform: rotate(-9deg);
     }
 
     .vinyl-right {
       right: -23%;
-
-      transform:
-        rotate(9deg);
+      transform: rotate(9deg);
     }
 
     .cover {
       position: relative;
-
       z-index: 3;
-
       aspect-ratio: 1;
-
       padding: 12px;
-
       border-radius: 38px;
 
       background:
@@ -688,229 +488,58 @@
         );
 
       box-shadow: var(--shadow);
-
-      transform-style:
-        preserve-3d;
-
-      transition:
-        transform
-        0.12s
-        ease-out;
+      transform-style: preserve-3d;
+      transition: transform 0.12s ease-out;
     }
 
     .cover::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
       border: 1px solid var(--border);
       border-radius: inherit;
-
       pointer-events: none;
     }
 
     .cover-inner {
       width: 100%;
       height: 100%;
-
-      position: relative;
-
-      display: grid;
-      place-items: center;
-
       overflow: hidden;
-
       border-radius: 29px;
-
-      background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(255, 42, 157, 0.32),
-          transparent 24%
-        ),
-        radial-gradient(
-          circle at 25% 22%,
-          rgba(157, 80, 255, 0.35),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 78% 72%,
-          rgba(60, 200, 255, 0.28),
-          transparent 31%
-        ),
-        linear-gradient(
-          145deg,
-          #17051f,
-          #050208 70%
-        );
-
-      box-shadow:
-        inset
-        0
-        0
-        100px
-        rgba(255, 42, 157, 0.12);
+      background: #0a0610;
     }
 
-    .cover-inner::before {
-      content: "";
-
-      position: absolute;
-
-      width: 67%;
-      height: 67%;
-
-      border:
-        8px
-        solid
-        #ff39ac;
-
-      border-radius:
-        50%
-        50%
-        45%
-        45%;
-
-      transform:
-        rotate(45deg);
-
-      box-shadow:
-        0 0 18px #ff39ac,
-        0 0 42px rgba(255, 57, 172, 0.8),
-        0 0 90px rgba(255, 57, 172, 0.48);
-
-      clip-path:
-        polygon(
-          0 0,
-          100% 0,
-          100% 100%,
-          0 100%
-        );
-
-      opacity: 0.9;
-    }
-
-    .cover-inner::after {
-      content: "";
-
-      position: absolute;
-
-      width: 74%;
-      height: 74%;
-
-      border:
-        2px
-        solid
-        rgba(82, 213, 255, 0.75);
-
-      border-radius:
-        50%
-        50%
-        45%
-        45%;
-
-      transform:
-        rotate(45deg);
-
-      filter:
-        drop-shadow(
-          0
-          0
-          15px
-          #52d5ff
-        );
-
-      opacity: 0.7;
-    }
-
-    .cover-text {
-      position: relative;
-
-      z-index: 4;
-
-      text-align: center;
-    }
-
-    .cover-title {
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          39px,
-          5.5vw,
-          68px
-        );
-
-      font-weight: 900;
-
-      line-height: 0.9;
-
-      letter-spacing: -0.055em;
-
-      text-shadow:
-        0 0 20px rgba(255, 255, 255, 0.28),
-        0 0 40px rgba(255, 42, 157, 0.45);
-    }
-
-    .cover-artist {
-      margin-top: 18px;
-
-      color: #eee7f2;
-
-      font-size: 11px;
-      font-weight: 900;
-
-      letter-spacing: 0.34em;
+    .cover-inner img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 29px;
     }
 
     .floating-label {
       position: absolute;
-
       z-index: 5;
-
       min-width: 170px;
-
-      padding:
-        14px
-        17px;
-
+      padding: 14px 17px;
       border: 1px solid var(--border);
       border-radius: 18px;
-
-      background:
-        rgba(5, 2, 8, 0.84);
-
-      box-shadow:
-        0
-        20px
-        55px
-        rgba(0, 0, 0, 0.45);
-
-      backdrop-filter:
-        blur(18px);
+      background: rgba(5, 2, 8, 0.84);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(18px);
     }
 
     .floating-label span {
       display: block;
-
       margin-bottom: 4px;
-
       color: #978e9f;
-
       font-size: 9px;
       font-weight: 900;
-
       letter-spacing: 0.18em;
     }
 
     .floating-label strong {
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      font-family: "Montserrat", sans-serif;
       font-size: 16px;
     }
 
@@ -924,41 +553,22 @@
       bottom: 35px;
     }
 
-    /* Support section first */
-
     .section {
-      padding:
-        105px
-        0;
+      padding: 105px 0;
     }
 
     .support-section {
-      padding-top:
-        60px;
+      padding-top: 60px;
     }
 
     .support-card {
       position: relative;
-
       display: grid;
-
-      grid-template-columns:
-        1fr
-        auto;
-
+      grid-template-columns: 1fr auto;
       align-items: center;
-
       gap: 40px;
-
       overflow: hidden;
-
-      padding:
-        clamp(
-          38px,
-          6vw,
-          72px
-        );
-
+      padding: clamp(38px, 6vw, 72px);
       border: 1px solid var(--border);
       border-radius: 36px;
 
@@ -980,128 +590,76 @@
 
     .support-card::after {
       content: "W";
-
       position: absolute;
-
       right: 2%;
       top: -40%;
-
-      color:
-        rgba(255, 255, 255, 0.025);
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      color: rgba(255, 255, 255, 0.025);
+      font-family: "Montserrat", sans-serif;
       font-size: 380px;
       font-weight: 900;
-
       pointer-events: none;
     }
 
     .kicker {
       display: block;
-
       margin-bottom: 13px;
-
       color: #d1bbff;
-
       font-size: 11px;
       font-weight: 900;
-
       letter-spacing: 0.21em;
     }
 
     h2 {
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          44px,
-          7vw,
-          82px
-        );
-
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(44px, 7vw, 82px);
       line-height: 0.94;
-
       letter-spacing: -0.055em;
     }
 
     .support-card p {
       max-width: 730px;
-
       margin-top: 20px;
-
       color: #ccc4d3;
-
       font-size: 18px;
-
       line-height: 1.75;
     }
 
     .support-card .button {
       position: relative;
       z-index: 2;
-
       min-width: 230px;
     }
 
-    /* Platforms */
-
     .section-heading {
       display: grid;
-
-      grid-template-columns:
-        1fr
-        0.7fr;
-
+      grid-template-columns: 1fr 0.7fr;
       align-items: end;
-
       gap: 38px;
-
       margin-bottom: 42px;
     }
 
     .section-heading p {
       color: var(--muted);
-
       line-height: 1.75;
     }
 
     .platforms {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          12,
-          1fr
-        );
-
+      grid-template-columns: repeat(12, 1fr);
       gap: 16px;
     }
 
     .platform {
       position: relative;
-
-      grid-column:
-        span
-        3;
-
+      grid-column: span 3;
       min-height: 255px;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
       overflow: hidden;
-
       padding: 26px;
-
       border: 1px solid var(--border);
       border-radius: 26px;
-
       text-decoration: none;
 
       background:
@@ -1112,43 +670,26 @@
         );
 
       box-shadow:
-        0
-        22px
-        65px
-        rgba(0, 0, 0, 0.27);
+        0 22px 65px rgba(0, 0, 0, 0.27);
 
       transition: 0.26s ease;
     }
 
     .platform:hover {
-      transform:
-        translateY(-8px);
-
-      border-color:
-        rgba(255, 255, 255, 0.25);
-
-      box-shadow:
-        0
-        30px
-        90px
-        rgba(0, 0, 0, 0.42);
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
     }
 
     .platform::before {
       content: "";
-
       position: absolute;
-
       width: 190px;
       height: 190px;
-
       right: -70px;
       top: -75px;
-
       border-radius: 50%;
-
       opacity: 0.2;
-
       filter: blur(30px);
     }
 
@@ -1177,44 +718,30 @@
     .platform-icon {
       width: 50px;
       height: 50px;
-
       display: grid;
       place-items: center;
-
       border: 1px solid var(--border);
       border-radius: 16px;
-
-      background:
-        rgba(255, 255, 255, 0.075);
-
+      background: rgba(255, 255, 255, 0.075);
       font-weight: 900;
     }
 
     .arrow {
       color: #ccc4d4;
-
       font-size: 21px;
     }
 
     .platform h3 {
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      font-family: "Montserrat", sans-serif;
       font-size: 25px;
     }
 
     .platform p {
       margin-top: 8px;
-
       color: var(--muted);
-
       font-size: 14px;
-
       line-height: 1.55;
     }
-
-    /* Quote */
 
     .quote-section {
       padding-top: 30px;
@@ -1222,19 +749,10 @@
 
     .quote-card {
       position: relative;
-
       overflow: hidden;
-
-      padding:
-        clamp(
-          50px,
-          8vw,
-          90px
-        );
-
+      padding: clamp(50px, 8vw, 90px);
       border: 1px solid var(--border);
       border-radius: 36px;
-
       text-align: center;
 
       background:
@@ -1250,171 +768,100 @@
 
     .quote-card::before {
       content: "WALKIE";
-
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: -45px;
-
-      color:
-        rgba(255, 255, 255, 0.022);
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          105px,
-          18vw,
-          245px
-        );
-
+      color: rgba(255, 255, 255, 0.022);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(105px, 18vw, 245px);
       font-weight: 900;
-
       line-height: 1;
     }
 
     .quote-card p {
       position: relative;
       z-index: 1;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        clamp(
-          31px,
-          5vw,
-          67px
-        );
-
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(31px, 5vw, 67px);
       line-height: 1.08;
-
       letter-spacing: -0.04em;
     }
 
     .quote-card strong {
       position: relative;
       z-index: 1;
-
       display: block;
-
       margin-top: 24px;
-
       color: #aaa1b2;
-
       font-size: 11px;
       letter-spacing: 0.2em;
     }
 
-    /* About */
-
     .about-grid {
       display: grid;
-
-      grid-template-columns:
-        0.9fr
-        1.1fr;
-
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 54px;
-
       align-items: start;
     }
 
     .about-copy p {
       max-width: 610px;
-
       margin-top: 22px;
-
       color: var(--muted);
-
       font-size: 18px;
-
       line-height: 1.75;
     }
 
     .about-list {
       display: grid;
-
       gap: 14px;
     }
 
     .about-item {
       display: grid;
-
-      grid-template-columns:
-        72px
-        1fr;
-
+      grid-template-columns: 72px 1fr;
       align-items: center;
-
       gap: 22px;
-
       padding: 26px;
-
       border: 1px solid var(--border);
       border-radius: 24px;
-
-      background:
-        rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .about-number {
       color: var(--purple);
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      font-family: "Montserrat", sans-serif;
       font-size: 30px;
       font-weight: 900;
     }
 
     .about-item h3 {
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      font-family: "Montserrat", sans-serif;
       font-size: 23px;
     }
 
     .about-item p {
       margin-top: 6px;
-
       color: var(--muted);
-
       line-height: 1.55;
     }
 
-    /* YouTube */
-
     .channels {
       display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
+      grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
     .channel {
       min-height: 300px;
-
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-
       padding: 34px;
-
       overflow: hidden;
-
       border: 1px solid var(--border);
       border-radius: 28px;
-
       text-decoration: none;
 
       background:
@@ -1431,92 +878,59 @@
         rgba(255, 255, 255, 0.045);
 
       box-shadow:
-        0
-        22px
-        70px
-        rgba(0, 0, 0, 0.3);
+        0 22px 70px rgba(0, 0, 0, 0.3);
 
       transition: 0.25s ease;
     }
 
     .channel:hover {
-      transform:
-        translateY(-7px);
-
-      border-color:
-        rgba(255, 255, 255, 0.25);
+      transform: translateY(-7px);
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
     .channel small {
       color: #f2a4bd;
-
       font-size: 10px;
       font-weight: 900;
-
       letter-spacing: 0.2em;
     }
 
     .channel h3 {
       margin-top: 16px;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      font-family: "Montserrat", sans-serif;
       font-size: 34px;
     }
 
     .channel p {
       margin-top: 9px;
-
       color: var(--muted);
     }
 
     .channel strong {
       margin-top: 28px;
-
       font-size: 12px;
-
       letter-spacing: 0.1em;
     }
 
-    /* Footer */
-
     footer {
-      padding:
-        55px
-        0
-        65px;
-
+      padding: 55px 0 65px;
       color: #8f8798;
     }
 
     .footer {
       display: grid;
-
-      grid-template-columns:
-        1fr
-        auto;
-
+      grid-template-columns: 1fr auto;
       align-items: end;
-
       gap: 25px;
-
       padding-top: 30px;
 
       border-top:
-        1px
-        solid
-        rgba(255, 255, 255, 0.09);
+        1px solid rgba(255, 255, 255, 0.09);
     }
 
     .footer-title {
       color: white;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
+      font-family: "Montserrat", sans-serif;
       font-size: 24px;
       font-weight: 900;
     }
@@ -1528,13 +942,11 @@
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-
       gap: 18px;
     }
 
     .footer-links a {
       color: #bbb4c4;
-
       text-decoration: none;
     }
 
@@ -1543,42 +955,28 @@
     }
 
     .copyright {
-      grid-column:
-        1 / -1;
-
+      grid-column: 1 / -1;
       margin-top: 10px;
-
       font-size: 12px;
     }
 
-    /* Scroll animation */
-
     .reveal {
       opacity: 0;
-
-      transform:
-        translateY(30px);
+      transform: translateY(30px);
 
       transition:
-        opacity
-        0.8s
-        ease,
-        transform
-        0.8s
-        ease;
+        opacity 0.8s ease,
+        transform 0.8s ease;
     }
 
     .reveal.visible {
       opacity: 1;
-
       transform: none;
     }
 
     .delay {
       transition-delay: 0.15s;
     }
-
-    /* Mobile */
 
     @media (max-width: 980px) {
       .hero-grid,
@@ -1589,21 +987,15 @@
       }
 
       .art-zone {
-        margin:
-          25px
-          auto
-          0;
+        margin: 25px auto 0;
       }
 
       .platform {
-        grid-column:
-          span
-          6;
+        grid-column: span 6;
       }
 
       .support-card .button {
-        width:
-          max-content;
+        width: max-content;
       }
     }
 
@@ -1622,23 +1014,15 @@
 
       .nav-links {
         position: absolute;
-
         top: 76px;
         left: 18px;
         right: 18px;
-
         display: none;
-
         padding: 12px;
-
         border: 1px solid var(--border);
         border-radius: 24px;
-
-        background:
-          rgba(5, 2, 8, 0.95);
-
-        backdrop-filter:
-          blur(22px);
+        background: rgba(5, 2, 8, 0.95);
+        backdrop-filter: blur(22px);
       }
 
       .nav-links.open {
@@ -1654,12 +1038,7 @@
       }
 
       .hero h1 {
-        font-size:
-          clamp(
-            57px,
-            18vw,
-            90px
-          );
+        font-size: clamp(57px, 18vw, 90px);
       }
 
       .hero-buttons .button {
@@ -1679,10 +1058,7 @@
       }
 
       .platform {
-        grid-column:
-          span
-          12;
-
+        grid-column: span 12;
         min-height: 220px;
       }
 
@@ -1692,25 +1068,6 @@
 
       .footer {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration:
-          0.01ms !important;
-
-        animation-iteration-count:
-          1 !important;
-
-        transition-duration:
-          0.01ms !important;
       }
     }
   </style>
@@ -1756,8 +1113,6 @@
   </header>
 
   <main>
-
-    <!-- Hero -->
 
     <section class="hero" id="home">
 
@@ -1819,20 +1174,10 @@
           <div class="cover" id="cover">
 
             <div class="cover-inner">
-
-              <div class="cover-text">
-
-                <div class="cover-title">
-                  WAT EK<br>
-                  WIL HÊ
-                </div>
-
-                <div class="cover-artist">
-                  WALKIE-MUSIC
-                </div>
-
-              </div>
-
+              <img
+                src="wat-ek-wil-he-cover.png"
+                alt="Wat Ek Wil Hê by Walkie-Music"
+              >
             </div>
 
           </div>
@@ -1852,8 +1197,6 @@
       </div>
 
     </section>
-
-    <!-- Support first -->
 
     <section class="section support-section" id="support">
 
@@ -1895,8 +1238,6 @@
 
     </section>
 
-    <!-- Music -->
-
     <section class="section" id="music">
 
       <div class="container">
@@ -1904,15 +1245,8 @@
         <div class="section-heading reveal">
 
           <div>
-
-            <span class="kicker">
-              LISTEN EVERYWHERE
-            </span>
-
-            <h2>
-              THE SOUND OF WALKIE.
-            </h2>
-
+            <span class="kicker">LISTEN EVERYWHERE</span>
+            <h2>THE SOUND OF WALKIE.</h2>
           </div>
 
           <p>
@@ -1930,7 +1264,6 @@
             target="_blank"
             rel="noopener"
           >
-
             <div class="platform-top">
               <span class="platform-icon">S</span>
               <span class="arrow">↗</span>
@@ -1938,11 +1271,8 @@
 
             <div>
               <h3>Spotify</h3>
-              <p>
-                Official releases and artist profile.
-              </p>
+              <p>Official releases and artist profile.</p>
             </div>
-
           </a>
 
           <a
@@ -1951,7 +1281,6 @@
             target="_blank"
             rel="noopener"
           >
-
             <div class="platform-top">
               <span class="platform-icon">♪</span>
               <span class="arrow">↗</span>
@@ -1959,11 +1288,8 @@
 
             <div>
               <h3>Apple Music</h3>
-              <p>
-                Listen in high quality on Apple Music.
-              </p>
+              <p>Listen in high quality on Apple Music.</p>
             </div>
-
           </a>
 
           <a
@@ -1972,7 +1298,6 @@
             target="_blank"
             rel="noopener"
           >
-
             <div class="platform-top">
               <span class="platform-icon">▶</span>
               <span class="arrow">↗</span>
@@ -1980,11 +1305,8 @@
 
             <div>
               <h3>YouTube Music</h3>
-              <p>
-                Official distributed releases.
-              </p>
+              <p>Official distributed releases.</p>
             </div>
-
           </a>
 
           <a
@@ -1993,7 +1315,6 @@
             target="_blank"
             rel="noopener"
           >
-
             <div class="platform-top">
               <span class="platform-icon">♬</span>
               <span class="arrow">↗</span>
@@ -2001,11 +1322,8 @@
 
             <div>
               <h3>TikTok</h3>
-              <p>
-                Previews, drops and music moments.
-              </p>
+              <p>Previews, drops and music moments.</p>
             </div>
-
           </a>
 
         </div>
@@ -2013,8 +1331,6 @@
       </div>
 
     </section>
-
-    <!-- Quote -->
 
     <section class="section quote-section">
 
@@ -2026,9 +1342,7 @@
             “Music is where the dream becomes real.”
           </p>
 
-          <strong>
-            WALKIE
-          </strong>
+          <strong>WALKIE</strong>
 
         </div>
 
@@ -2036,21 +1350,15 @@
 
     </section>
 
-    <!-- About -->
-
     <section class="section" id="about">
 
       <div class="container about-grid">
 
         <div class="about-copy reveal">
 
-          <span class="kicker">
-            THE ARTIST
-          </span>
+          <span class="kicker">THE ARTIST</span>
 
-          <h2>
-            BUILT FROM A DREAM.
-          </h2>
+          <h2>BUILT FROM A DREAM.</h2>
 
           <p>
             WALKIE is an independent artist creating emotional,
@@ -2063,48 +1371,30 @@
         <div class="about-list">
 
           <div class="about-item reveal">
-
-            <span class="about-number">
-              01
-            </span>
+            <span class="about-number">01</span>
 
             <div>
               <h3>Independent</h3>
-              <p>
-                Built without limits and released on his own terms.
-              </p>
+              <p>Built without limits and released on his own terms.</p>
             </div>
-
           </div>
 
           <div class="about-item reveal">
-
-            <span class="about-number">
-              02
-            </span>
+            <span class="about-number">02</span>
 
             <div>
               <h3>Original</h3>
-              <p>
-                A signature sound shaped by emotion and energy.
-              </p>
+              <p>A signature sound shaped by emotion and energy.</p>
             </div>
-
           </div>
 
           <div class="about-item reveal">
-
-            <span class="about-number">
-              03
-            </span>
+            <span class="about-number">03</span>
 
             <div>
               <h3>Worldwide</h3>
-              <p>
-                Music created to reach listeners everywhere.
-              </p>
+              <p>Music created to reach listeners everywhere.</p>
             </div>
-
           </div>
 
         </div>
@@ -2113,8 +1403,6 @@
 
     </section>
 
-    <!-- YouTube -->
-
     <section class="section" id="channels">
 
       <div class="container">
@@ -2122,15 +1410,8 @@
         <div class="section-heading reveal">
 
           <div>
-
-            <span class="kicker">
-              OFFICIAL CHANNELS
-            </span>
-
-            <h2>
-              FOLLOW THE JOURNEY.
-            </h2>
-
+            <span class="kicker">OFFICIAL CHANNELS</span>
+            <h2>FOLLOW THE JOURNEY.</h2>
           </div>
 
           <p>
@@ -2148,23 +1429,10 @@
             target="_blank"
             rel="noopener"
           >
-
-            <small>
-              MAIN CHANNEL
-            </small>
-
-            <h3>
-              Official Releases
-            </h3>
-
-            <p>
-              Distributed songs and official uploads.
-            </p>
-
-            <strong>
-              OPEN CHANNEL ↗
-            </strong>
-
+            <small>MAIN CHANNEL</small>
+            <h3>Official Releases</h3>
+            <p>Distributed songs and official uploads.</p>
+            <strong>OPEN CHANNEL ↗</strong>
           </a>
 
           <a
@@ -2173,23 +1441,10 @@
             target="_blank"
             rel="noopener"
           >
-
-            <small>
-              EARLY RELEASES
-            </small>
-
-            <h3>
-              Walkie Official
-            </h3>
-
-            <p>
-              New songs, previews and uploads first.
-            </p>
-
-            <strong>
-              OPEN CHANNEL ↗
-            </strong>
-
+            <small>EARLY RELEASES</small>
+            <h3>Walkie Official</h3>
+            <p>New songs, previews and uploads first.</p>
+            <strong>OPEN CHANNEL ↗</strong>
           </a>
 
         </div>
@@ -2205,15 +1460,8 @@
     <div class="container footer">
 
       <div>
-
-        <div class="footer-title">
-          WALKIE
-        </div>
-
-        <p>
-          Dreaming Through Music.
-        </p>
-
+        <div class="footer-title">WALKIE</div>
+        <p>Dreaming Through Music.</p>
       </div>
 
       <div class="footer-links">
@@ -2262,24 +1510,16 @@
 
   <script>
     const cursorLight =
-      document.getElementById(
-        "cursorLight"
-      );
+      document.getElementById("cursorLight");
 
     const menuButton =
-      document.getElementById(
-        "menuButton"
-      );
+      document.getElementById("menuButton");
 
     const navLinks =
-      document.getElementById(
-        "navLinks"
-      );
+      document.getElementById("navLinks");
 
     const cover =
-      document.getElementById(
-        "cover"
-      );
+      document.getElementById("cover");
 
     window.addEventListener(
       "pointermove",
@@ -2295,9 +1535,7 @@
     menuButton.addEventListener(
       "click",
       function() {
-        navLinks.classList.toggle(
-          "open"
-        );
+        navLinks.classList.toggle("open");
       }
     );
 
@@ -2307,9 +1545,7 @@
         link.addEventListener(
           "click",
           function() {
-            navLinks.classList.remove(
-              "open"
-            );
+            navLinks.classList.remove("open");
           }
         );
       });
@@ -2358,17 +1594,13 @@
         function(entries) {
           entries.forEach(
             function(entry) {
-              if (
-                entry.isIntersecting
-              ) {
+              if (entry.isIntersecting) {
                 entry.target
                   .classList
                   .add("visible");
 
                 revealObserver
-                  .unobserve(
-                    entry.target
-                  );
+                  .unobserve(entry.target);
               }
             }
           );
@@ -2379,14 +1611,10 @@
       );
 
     document
-      .querySelectorAll(
-        ".reveal"
-      )
+      .querySelectorAll(".reveal")
       .forEach(
         function(element) {
-          revealObserver.observe(
-            element
-          );
+          revealObserver.observe(element);
         }
       );
   </script>
