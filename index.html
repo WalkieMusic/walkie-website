@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050912">
+  <title>WALKIE-MUSIC — Bet on Yourself</title>
+  <meta name="description" content="The official home of WALKIE-MUSIC. BET ON YOURSELF — new single out 28 August 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #03060c;
+      --bg-soft: #07101c;
+      --navy: #0d1c2d;
+      --white: #f7f9fc;
+      --muted: #9ca9b8;
+      --line: rgba(255,255,255,.12);
+      --glass: rgba(8,16,28,.68);
+      --silver: #dce5ee;
+      --orange: #e99663;
+      --orange-2: #f2b080;
+      --shadow: 0 30px 90px rgba(0,0,0,.48);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 50% 8%, rgba(47, 86, 127, .28), transparent 34%),
+        radial-gradient(circle at 50% 46%, rgba(28, 53, 83, .16), transparent 42%),
+        linear-gradient(180deg, #03060c 0%, #050912 42%, #02050a 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: .55;
+      background-image:
+        radial-gradient(circle at 8% 15%, rgba(255,255,255,.9) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 18% 32%, rgba(255,255,255,.8) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 33% 9%, rgba(255,255,255,.8) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 52% 20%, rgba(255,255,255,.9) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 72% 12%, rgba(255,255,255,.7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 88% 26%, rgba(255,255,255,.75) 0 1px, transparent 1.5px);
+      background-size: 260px 260px, 340px 340px, 300px 300px, 390px 390px, 320px 320px, 360px 360px;
+    }
+
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 36px)); margin-inline: auto; }
+
+    .site-header {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 12px 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(3,6,12,.74);
+      box-shadow: 0 18px 50px rgba(0,0,0,.34);
+      backdrop-filter: blur(22px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.22);
+      background: linear-gradient(145deg,#17202c,#080d14);
+      font-family: "Montserrat", sans-serif;
+      font-size: 17px; font-weight: 900;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 0 24px rgba(105,150,200,.18);
+    }
+
+    .brand-name {
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px; font-weight: 900; letter-spacing: .18em;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 5px; }
+    .nav-links a {
+      padding: 11px 15px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #d1d9e2;
+      font-size: 13px; font-weight: 800;
+      transition: .22s ease;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.07); color: #fff; }
+    .nav-links .support-link {
+      color: #fff;
+      background: linear-gradient(90deg,#a86542,#de9465);
+      box-shadow: 0 12px 34px rgba(222,148,101,.18);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px; height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+      cursor: pointer;
+    }
+    .menu-button span {
+      display: block;
+      width: 18px; height: 2px;
+      margin: 5px auto;
+      background: #fff;
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: 132px 0 76px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 240px;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(2,5,10,.96));
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 620px; height: 620px;
+      border-radius: 50%;
+      filter: blur(105px);
+      pointer-events: none;
+    }
+    .hero-glow-one { left: -280px; top: 60px; background: rgba(28,66,110,.32); }
+    .hero-glow-two { right: -280px; bottom: -140px; background: rgba(226,140,88,.13); }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: clamp(48px, 7vw, 92px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: #e8edf3;
+      font-size: 10px; font-weight: 900;
+      letter-spacing: .22em;
+      backdrop-filter: blur(14px);
+    }
+
+    .live-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--orange-2);
+      box-shadow: 0 0 16px var(--orange-2);
+      animation: pulse 1.7s infinite;
+    }
+    @keyframes pulse { 50% { transform: scale(1.35); opacity: .6; } }
+
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(62px, 8.6vw, 126px);
+      line-height: .82;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+      max-width: 760px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(92deg,#ffffff 0%,#d6e1ed 48%,#99afc3 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: none;
+    }
+
+    .hero-tagline {
+      margin-top: 28px;
+      max-width: 670px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.25;
+      color: #f5f7fa;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.9vw, 19px);
+      line-height: 1.75;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .button {
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: .25s ease;
+    }
+    .button:hover { transform: translateY(-4px); }
+
+    .button-primary {
+      background: linear-gradient(90deg,#9c5d3c,#e09362);
+      box-shadow: 0 18px 46px rgba(224,147,98,.2);
+    }
+    .button-primary:hover { box-shadow: 0 24px 64px rgba(224,147,98,.3); }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(15px);
+    }
+
+    .release-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 24px;
+      color: #aab6c4;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .art-zone {
+      position: relative;
+      width: min(100%, 520px);
+      margin-left: auto;
+      perspective: 1200px;
+    }
+
+    .cover {
+      position: relative;
+      z-index: 3;
+      aspect-ratio: 1;
+      padding: 11px;
+      border-radius: 34px;
+      background: linear-gradient(145deg,rgba(255,255,255,.19),rgba(255,255,255,.025));
+      box-shadow: var(--shadow);
+      transform-style: preserve-3d;
+      transition: transform .12s ease-out;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: -24px;
+      z-index: -1;
+      border-radius: 48px;
+      background: radial-gradient(circle at 50% 70%, rgba(228,147,95,.18), rgba(42,75,108,.11) 42%, transparent 68%);
+      filter: blur(24px);
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--line);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .cover-inner {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      border-radius: 26px;
+      background: #050912;
+    }
+    .cover-inner img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+    .floating-label {
+      position: absolute;
+      z-index: 5;
+      min-width: 170px;
+      padding: 14px 17px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(3,6,12,.82);
+      box-shadow: 0 20px 55px rgba(0,0,0,.42);
+      backdrop-filter: blur(18px);
+    }
+    .floating-label span {
+      display: block;
+      margin-bottom: 4px;
+      color: #8f9baa;
+      font-size: 9px; font-weight: 900; letter-spacing: .18em;
+    }
+    .floating-label strong {
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+    }
+    .label-top { top: 26px; right: -24px; }
+    .label-bottom { left: -25px; bottom: 32px; }
+
+    .section { padding: 96px 0; }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr .72fr;
+      align-items: end;
+      gap: 38px;
+      margin-bottom: 40px;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: #b7c8d9;
+      font-size: 10px; font-weight: 900;
+      letter-spacing: .22em;
+    }
+
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(42px, 6.5vw, 78px);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+
+    .section-heading p,
+    .body-copy {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .manifesto {
+      padding-top: 46px;
+    }
+
+    .manifesto-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(44px, 7vw, 82px);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(226,140,88,.13), transparent 32%),
+        radial-gradient(circle at 0% 100%, rgba(46,84,125,.22), transparent 38%),
+        rgba(255,255,255,.035);
+      box-shadow: var(--shadow);
+    }
+
+    .manifesto-card::after {
+      content: "YOU.";
+      position: absolute;
+      right: 2%;
+      bottom: -28px;
+      color: rgba(255,255,255,.025);
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(120px, 22vw, 300px);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .manifesto-card blockquote {
+      position: relative;
+      z-index: 1;
+      max-width: 930px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(30px, 5.2vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+    .manifesto-card blockquote span { color: var(--orange-2); }
+    .manifesto-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin-top: 24px;
+      color: #aeb8c4;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .release-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 390px) 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .release-artwork {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+    }
+    .release-artwork img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+    .release-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(3,6,12,.82);
+      font-size: 9px; font-weight: 900; letter-spacing: .16em;
+      backdrop-filter: blur(14px);
+    }
+
+    .release-info {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(30px, 5vw, 56px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(61,95,130,.17), transparent 38%),
+        rgba(255,255,255,.035);
+      box-shadow: 0 22px 70px rgba(0,0,0,.28);
+    }
+
+    .release-info h3 {
+      margin-top: 8px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(36px, 5.8vw, 66px);
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+    .release-info p {
+      max-width: 620px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .release-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .platform-heading {
+      margin: 52px 0 20px;
+      color: #d4dce4;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 15px;
+    }
+
+    .platform {
+      position: relative;
+      grid-column: span 3;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      text-decoration: none;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      box-shadow: 0 20px 58px rgba(0,0,0,.24);
+      transition: .25s ease;
+    }
+    .platform:hover { transform: translateY(-7px); border-color: rgba(255,255,255,.22); }
+    .platform::before {
+      content: "";
+      position: absolute;
+      width: 180px; height: 180px;
+      right: -72px; top: -70px;
+      border-radius: 50%;
+      opacity: .15;
+      filter: blur(30px);
+    }
+    .spotify::before { background: #1db954; }
+    .apple::before { background: #ff375f; }
+    .youtube::before { background: #ff0033; }
+    .tiktok::before { background: #25f4ee; }
+
+    .platform-top { display: flex; align-items: center; justify-content: space-between; }
+    .platform-icon {
+      width: 48px; height: 48px;
+      display: grid; place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.055);
+      font-weight: 900;
+    }
+    .arrow { color: #c7d0d9; font-size: 20px; }
+    .platform h3 { font-family: "Montserrat", sans-serif; font-size: 23px; }
+    .platform p { margin-top: 7px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+
+    .start-here {
+      padding-top: 42px;
+    }
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .track-card {
+      position: relative;
+      min-height: 310px;
+      overflow: hidden;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(226,140,88,.16), transparent 28%),
+        radial-gradient(circle at 10% 100%, rgba(46,84,125,.2), transparent 38%),
+        linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+      box-shadow: 0 22px 64px rgba(0,0,0,.28);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .25s ease;
+    }
+
+    .track-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 30px 80px rgba(0,0,0,.38);
+    }
+
+    .track-number {
+      color: #90a0b0;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .18em;
+    }
+
+    .track-art {
+      width: 100%;
+      aspect-ratio: 1;
+      margin: 18px 0 20px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #08101a;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .track-art img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .track-card h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 21px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+
+    .track-card p {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .track-actions {
+      display: flex;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .track-link {
+      flex: 1;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 900;
+      background: rgba(255,255,255,.04);
+      transition: .22s ease;
+    }
+
+    .track-link:hover {
+      background: rgba(255,255,255,.09);
+      transform: translateY(-2px);
+    }
+
+    .track-link.primary {
+      background: linear-gradient(90deg,#9c5d3c,#e09362);
+      border-color: transparent;
+    }
+
+    .support-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 36px;
+      padding: clamp(36px, 6vw, 68px);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255,255,255,.035);
+      box-shadow: var(--shadow);
+    }
+    .support-card p {
+      max-width: 730px;
+      margin-top: 18px;
+      color: #aab4bf;
+      font-size: 17px;
+      line-height: 1.72;
+    }
+    .support-card .button { min-width: 220px; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .about-copy p {
+      max-width: 610px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .about-list { display: grid; gap: 13px; }
+    .about-item {
+      display: grid;
+      grid-template-columns: 66px 1fr;
+      align-items: center;
+      gap: 20px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.035);
+    }
+    .about-number {
+      color: var(--orange-2);
+      font-family: "Montserrat", sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+    }
+    .about-item h3 { font-family: "Montserrat", sans-serif; font-size: 22px; }
+    .about-item p { margin-top: 5px; color: var(--muted); line-height: 1.5; }
+
+    footer { padding: 54px 0 64px; color: #8894a0; }
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-title { color: #fff; font-family: "Montserrat", sans-serif; font-size: 23px; font-weight: 900; }
+    .footer p { margin-top: 5px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a { color: #b7c0ca; text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+    .copyright { grid-column: 1 / -1; margin-top: 8px; font-size: 12px; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .delay { transition-delay: .12s; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .section-heading, .release-grid, .support-card, .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .art-zone { margin: 28px auto 0; }
+      .platform { grid-column: span 6; }
+      .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .support-card .button { width: max-content; }
+    }
+
+    @media (max-width: 720px) {
+      .site-header { top: 10px; }
+      .menu-button { display: block; }
+      .brand-name { display: none; }
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 18px; right: 18px;
+        display: none;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(3,6,12,.96);
+        backdrop-filter: blur(22px);
+      }
+      .nav-links.open { display: grid; }
+      .nav-links a { text-align: center; }
+      .hero { padding-top: 120px; }
+      .hero h1 { font-size: clamp(54px, 17vw, 88px); }
+      .hero-buttons .button { width: 100%; }
+      .label-top { right: 8px; }
+      .label-bottom { left: 8px; }
+      .platform { grid-column: span 12; min-height: 205px; }
+      .track-grid { grid-template-columns: 1fr; }
+      .support-card .button { width: 100%; }
+      .footer { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-logo">W</span>
+        <span class="brand-name">WALKIE-MUSIC</span>
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#release">New Single</a>
+        <a href="#start-here">Start Here</a>
+        <a href="#music">Platforms</a>
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+        <a class="support-link" href="https://www.paypal.com/ncp/payment/PTE4TP5EQ8HLW" target="_blank" rel="noopener">
+          Support Walkie
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span class="live-dot"></span>
+            NEW SINGLE · 28.08.26
+          </div>
+
+          <h1>
+            BET ON
+            <span>YOURSELF.</span>
+          </h1>
+
+          <div class="hero-tagline">
+            “The world doesn't have to believe first. You do.”
+          </div>
+
+          <p class="hero-description">
+            A song for anyone who has ever been told to play it safe.
+            When nobody else sees the dream yet, keep moving anyway.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#release">Discover the Single</a>
+            <a class="button button-secondary" href="https://www.tiktok.com/@walkiemusic" target="_blank" rel="noopener">
+              Watch the Teasers
+            </a>
+          </div>
+
+          <div class="release-meta">
+            <span>WALKIE-MUSIC</span>
+            <span>FRIDAY 28 AUGUST 2026</span>
+            <span>POP / DANCE</span>
+          </div>
+        </div>
+
+        <div class="art-zone reveal delay">
+          <div class="cover" id="cover">
+            <div class="cover-inner">
+              <img src="images/bet-on-yourself.png" alt="Bet on Yourself by WALKIE-MUSIC">
+            </div>
+          </div>
+
+          <div class="floating-label label-top">
+            <span>NEW SINGLE</span>
+            <strong>28.08.26</strong>
+          </div>
+
+          <div class="floating-label label-bottom">
+            <span>ARTIST</span>
+            <strong>WALKIE-MUSIC</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section manifesto">
+      <div class="container">
+        <div class="manifesto-card reveal">
+          <span class="kicker">THE MESSAGE</span>
+          <blockquote>
+            If nobody else is betting on you...
+            <span>BET ON YOURSELF.</span>
+          </blockquote>
+          <p>
+            Stop waiting for permission. Stop measuring your beginning against somebody else's chapter twenty.
+            The biggest gamble is spending your life wondering what could have been.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="release">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="kicker">COMING 28 AUGUST</span>
+            <h2>THE NEW SINGLE.</h2>
+          </div>
+          <p>
+            BET ON YOURSELF is the next release from WALKIE-MUSIC — built around one simple idea:
+            your dream does not need everybody else's approval before you start.
+          </p>
+        </div>
+
+        <div class="release-grid reveal">
+          <div class="release-artwork">
+            <img src="images/bet-on-yourself.png" alt="Bet on Yourself cover art">
+            <span class="release-badge">NEW SINGLE</span>
+          </div>
+
+          <div class="release-info">
+            <span class="kicker">BET ON YOURSELF</span>
+            <h3>28.08.26</h3>
+            <p>
+              The new single arrives Friday, 28 August 2026.
+              Follow WALKIE-MUSIC now and be there when it drops.
+            </p>
+
+            <div class="release-actions">
+              <a class="button button-primary" href="https://www.tiktok.com/@walkiemusic" target="_blank" rel="noopener">
+                Watch on TikTok
+              </a>
+              <a class="button button-secondary" href="https://youtube.com/@walkiemusicofficial" target="_blank" rel="noopener">
+                Follow on YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-heading" id="music">STREAM & FOLLOW</div>
+
+        <div class="platforms">
+          <a class="platform spotify reveal" href="https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M" target="_blank" rel="noopener">
+            <div class="platform-top"><span class="platform-icon">S</span><span class="arrow">↗</span></div>
+            <div><h3>Spotify</h3><p>Follow the official artist profile and save the next release.</p></div>
+          </a>
+
+          <a class="platform apple reveal" href="https://music.apple.com/us/artist/walkie-music/1875428459" target="_blank" rel="noopener">
+            <div class="platform-top"><span class="platform-icon">♪</span><span class="arrow">↗</span></div>
+            <div><h3>Apple Music</h3><p>Listen to WALKIE-MUSIC on Apple Music.</p></div>
+          </a>
+
+          <a class="platform youtube reveal" href="https://youtube.com/@walkiemusicofficial" target="_blank" rel="noopener">
+            <div class="platform-top"><span class="platform-icon">▶</span><span class="arrow">↗</span></div>
+            <div><h3>YouTube</h3><p>Official releases, videos and new uploads.</p></div>
+          </a>
+
+          <a class="platform tiktok reveal" href="https://www.tiktok.com/@walkiemusic" target="_blank" rel="noopener">
+            <div class="platform-top"><span class="platform-icon">♬</span><span class="arrow">↗</span></div>
+            <div><h3>TikTok</h3><p>Teasers, previews and the road to release day.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section start-here" id="start-here">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="kicker">DISCOVER WALKIE-MUSIC</span>
+            <h2>START HERE.</h2>
+          </div>
+          <p>
+            Eight songs. Eight different sides of WALKIE-MUSIC.
+            If you're new here, this is where the journey starts.
+          </p>
+        </div>
+
+        <div class="track-grid">
+
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">01 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/wat-ek-wil-he.png" alt="Wat Ek Wil Hê cover artwork">
+              </div>
+              <h3>Wat Ek Wil Hê</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/kqF2AYFahfk?si=aOnuE18eH3AcWLX5" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">02 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/ek-is-nie-daai-ou-nie.png" alt="Ek Is Nie Daai Ou Nie cover artwork">
+              </div>
+              <h3>Ek Is Nie Daai Ou Nie</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/edDdCl6fAD0?si=GO6swH0NGuTmVlW-" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">03 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/wat-ek-moes-word.png" alt="Wat Ek Moes Word cover artwork">
+              </div>
+              <h3>Wat Ek Moes Word</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/UWCRIMlkgig?si=DntFVrQb5PwzZNa4" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">04 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/jy-kyk-na-my.png" alt="Jy Kyk Na My cover artwork">
+              </div>
+              <h3>Jy Kyk Na My</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/PzTiWR6KvtQ?si=JWZ0-kOCKBzNJvpF" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">05 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/wat-bly-oor.png" alt="Wat Bly Oor cover artwork">
+              </div>
+              <h3>Wat Bly Oor</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/IrQ1bEnSK80?si=D0xU2oXxHNIbhGTB" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">06 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/blameer-my.png" alt="Blameer My cover artwork">
+              </div>
+              <h3>Blameer My</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/Q3zS2QZm4p8?si=3wc8FXG7yKBGj-8-" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">07 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/crazy.png" alt="Crazy cover artwork">
+              </div>
+              <h3>Crazy</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/-mxsR_n3GcE?si=4P3HddwxEtLYg4TU" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+          <article class="track-card reveal">
+            <div>
+              <div class="track-number">08 · WALKIE-MUSIC</div>
+              <div class="track-art">
+                <img src="images/no-more-runnin.png" alt="No More Runnin’ cover artwork">
+              </div>
+              <h3>No More Runnin’</h3>
+              <p>Official release</p>
+            </div>
+            <div class="track-actions">
+              <a class="track-link primary" href="https://youtu.be/6h6UjhvgIi4?si=ZC7XBa37d84jXzBF" target="_blank" rel="noopener">▶ Listen on YouTube</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <span class="kicker">THE ARTIST</span>
+          <h2>BUILT FROM A DREAM.</h2>
+          <p>
+            WALKIE-MUSIC is an independent artist creating emotional, modern music with a cinematic edge.
+            Every release is another step forward — another story, another risk, another reason to keep going.
+          </p>
+        </div>
+
+        <div class="about-list">
+          <div class="about-item reveal">
+            <span class="about-number">01</span>
+            <div><h3>Independent</h3><p>Music built outside the usual path and released on its own terms.</p></div>
+          </div>
+          <div class="about-item reveal">
+            <span class="about-number">02</span>
+            <div><h3>Emotional</h3><p>Big hooks, honest lyrics and songs made to mean something.</p></div>
+          </div>
+          <div class="about-item reveal">
+            <span class="about-number">03</span>
+            <div><h3>Forward</h3><p>Keep creating. Keep learning. Keep betting on the dream.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <div class="support-card reveal">
+          <div>
+            <span class="kicker">SUPPORT THE DREAM</span>
+            <h2>HELP KEEP THE MUSIC MOVING.</h2>
+            <p>
+              WALKIE-MUSIC is built independently. Every contribution helps with new songs,
+              artwork, videos and future releases.
+            </p>
+          </div>
+
+          <a class="button button-primary" href="https://www.paypal.com/ncp/payment/PTE4TP5EQ8HLW" target="_blank" rel="noopener">
+            Support WALKIE-MUSIC ♥
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>
+        <div class="footer-title">WALKIE-MUSIC</div>
+        <p>Bet on the dream.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://open.spotify.com/artist/3HkQPPZVeuoEfuzcwJNX4M" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.tiktok.com/@walkiemusic" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com/@walkiemusicofficial" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.paypal.com/ncp/payment/PTE4TP5EQ8HLW" target="_blank" rel="noopener">Support</a>
+      </div>
+
+      <div class="copyright">© 2026 WALKIE-MUSIC. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const cover = document.getElementById("cover");
+
+    menuButton.addEventListener("click", function() {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    cover.addEventListener("pointermove", function(event) {
+      const rect = cover.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      cover.style.transform = "rotateY(" + (x * 9) + "deg) rotateX(" + (y * -9) + "deg)";
+    });
+
+    cover.addEventListener("pointerleave", function() {
+      cover.style.transform = "rotateY(0deg) rotateX(0deg)";
+    });
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(function(element) {
+      revealObserver.observe(element);
+    });
+  </script>
+</body>
+</html>
